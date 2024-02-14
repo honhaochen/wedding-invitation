@@ -1,34 +1,29 @@
-import cn from "classnames";
-import Link from "next/link";
-import Image from "next/image";
+import styles from "@/app/_styles/CoverImage.module.css";
 
 type Props = {
-  title: string;
-  src: string;
-  slug?: string;
+  inviteeName?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
-  const image = (
-    <Image
-      src={src}
-      alt={`Cover Image for ${title}`}
-      className={cn("shadow-sm w-full", {
-        "hover:shadow-lg transition-shadow duration-200": slug,
-      })}
-      width={1300}
-      height={630}
-    />
-  );
+const CoverImage = ({ inviteeName }: Props) => {
+  const src = "/assets/cover.jpg";
   return (
-    <div className="sm:mx-0">
-      {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
-          {image}
-        </Link>
-      ) : (
-        image
-      )}
+    <div className="relative h-[150vh] overflow-hidden rounded-3xl border-4 border-slate-200 my-10">
+      <div
+        className={`h-full bg-cover bg-center flex items-center justify-center ${styles.slideIn}`}
+        style={{ backgroundImage: `url('/assets/cover.jpg')` }}
+      >
+        <div className={`text-center text-white ${styles.fadeOut}`}>
+          <h1 className="text-4xl font-bold mb-4 font-sans">
+            Wedding Invitation
+          </h1>
+          <hr />
+          <p className="text-lg font-serif">Hao Chen & Chia Qian</p>
+          <p className="text-lg font-serif">27-10-2024</p>
+          <h1 className="text-4xl font-bold mb-4 font-mono">
+            Welcome, {inviteeName}
+          </h1>
+        </div>
+      </div>
     </div>
   );
 };

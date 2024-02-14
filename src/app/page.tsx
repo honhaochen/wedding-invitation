@@ -1,29 +1,24 @@
 import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
-import { getAllPosts } from "../lib/api";
+import DateView from "@/app/_components/date";
+import Story from "@/app/_components/story";
+import Registration from "@/app/_components/registration";
+import CoverImage from "@/app/_components/cover-image";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("@/app/_components/location"), {
+  loading: () => <p>loading...</p>,
+  ssr: false,
+});
 
 export default function Index() {
-  const allPosts = getAllPosts();
-
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
-
   return (
     <main>
       <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+        <CoverImage />
+        <DateView />
+        <Story />
+        <Map />
+        <Registration />
       </Container>
     </main>
   );
