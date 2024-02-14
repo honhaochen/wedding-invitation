@@ -10,20 +10,19 @@ const Location = () => {
   const position: LatLngExpression = [3.1266427658925164, 101.72525945920253];
 
   return (
-    <div className="w-full h-[100vh] flex items-center bg-rose-800 rounded-3xl border-4 border-slate-200 my-10">
-      <div className="w-3/5">
-        <h1 className="text-4xl font-bold mb-4 font-sans">
-          Wedding Invitation
-        </h1>
-        <hr />
-        <p className="text-lg font-serif">Hao Chen & Chia Qian</p>
-        <p className="text-lg font-serif">27-10-2024</p>
+    <div className="w-full h-[100vh] flex items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
+      <div className="w-3/5 p-8">
+        <h1 className="text-4xl font-bold mb-4 font-sans">婚礼地点 Venue</h1>
+        <p className="text-lg font-serif">喜粤饮食集团</p>
+        <p className="text-lg font-serif">
+          Sunway Velocity Grand Imperial Group
+        </p>
       </div>
       <div className="w-2/5 m-8">
         <MapContainer
           className="!h-[40vh]"
           center={position}
-          zoom={13}
+          zoom={16}
           style={{ width: "100%", height: "100%" }}
           scrollWheelZoom={false}
         >

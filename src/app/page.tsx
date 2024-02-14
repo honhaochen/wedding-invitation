@@ -15,8 +15,8 @@ export default function Index() {
     <main>
       <Container>
         <CoverImage />
-        <DateView />
         <Story />
+        <DateView />
         <Map />
         <Registration />
       </Container>
