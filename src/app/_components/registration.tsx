@@ -15,9 +15,11 @@ const Registration = () => {
 
   return (
     <div className="w-full h-[100vh] flex flex-col items-center justify-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
-      <div className="text-4xl mb-8 font-bold font-sans">登记 Registration</div>
+      <div className="text-4xl mb-8 font-bold font-sans text-white">
+        登记 Registration
+      </div>
       <form onSubmit={handleSubmit} className="flex flex-col bg-slate-100 p-8">
-        <label className="text-lg font-serif mb-2">
+        <label className="text-lg font-serif mb-2 ">
           人数 No Pax:
           <input
             type="number"

@@ -1,0 +1,31 @@
+@keyframes leftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.left {
+  animation: leftToRight 10s linear infinite;
+}
+
+.right {
+  animation: rightToLeft 10s linear infinite;
+}

@@ -12,9 +12,11 @@ const Location = () => {
   return (
     <div className="w-full h-[100vh] flex items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
       <div className="w-3/5 p-8">
-        <h1 className="text-4xl font-bold mb-4 font-sans">婚礼地点 Venue</h1>
-        <p className="text-lg font-serif">喜粤饮食集团</p>
-        <p className="text-lg font-serif">
+        <h1 className="text-4xl font-bold mb-4 font-sans text-white">
+          婚礼地点 Venue
+        </h1>
+        <p className="text-lg font-serif text-white">喜粤饮食集团</p>
+        <p className="text-lg font-serif text-white">
           Sunway Velocity Grand Imperial Group
         </p>
       </div>

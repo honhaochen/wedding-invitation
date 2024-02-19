@@ -1,6 +1,41 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import styles from "@/app/_styles/Story.module.css";
+
 const Story = () => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCount((prevCount) => (prevCount === 0 ? 1 : 0));
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const backgroundBoyImageUrl =
+    count === 1 ? "/assets/boy_smile.png" : "/assets/boy.png";
+  const backgroundGirlImageUrl =
+    count === 1 ? "/assets/girl_smile.png" : "/assets/girl.png";
+
   return (
-    <div className="w-full h-[100vh] flex items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10"></div>
+    <div className="w-full h-[100vh] flex items-center bg-rose-700 justify-center rounded-3xl border-4 border-slate-200 my-10">
+      <img
+        className={`w-[20vw] h-[30vh] ${styles.left}`}
+        style={{
+          backgroundImage: `url(${backgroundGirlImageUrl})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+      <img
+        className={`w-[20vw] h-[30vh] ${styles.right}`}
+        style={{
+          backgroundImage: `url(${backgroundBoyImageUrl})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+    </div>
   );
 };
 
