@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "@/app/_styles/Story.module.css";
 
 const Story = () => {
@@ -18,7 +18,7 @@ const Story = () => {
     count === 1 ? "/assets/girl_smile.png" : "/assets/girl.png";
 
   return (
-    <div className="w-full h-[100vh] flex items-center bg-rose-700 justify-center rounded-3xl border-4 border-slate-200 my-10">
+    <div className="h-[90vh] flex items-center bg-rose-700 justify-center rounded-3xl border-4 border-slate-200 my-10">
       <img
         className={`w-[20vw] h-[30vh] ${styles.left}`}
         style={{

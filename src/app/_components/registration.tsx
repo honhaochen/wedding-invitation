@@ -14,7 +14,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="w-full h-[100vh] flex flex-col items-center justify-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
+    <div className="h-[90vh] flex flex-col items-center justify-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
       <div className="text-4xl mb-8 font-bold font-sans text-white">
         登记 Registration
       </div>

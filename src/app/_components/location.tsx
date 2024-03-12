@@ -10,7 +10,7 @@ const Location = () => {
   const position: LatLngExpression = [3.1266427658925164, 101.72525945920253];
 
   return (
-    <div className="w-full h-[100vh] flex items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
+    <div className="h-[90vh] flex items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10">
       <div className="w-3/5 p-8">
         <h1 className="text-4xl font-bold mb-4 font-sans text-white">
           婚礼地点 Venue

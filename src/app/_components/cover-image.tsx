@@ -7,7 +7,7 @@ type Props = {
 const CoverImage = ({ inviteeName }: Props) => {
   const src = "/assets/cover.jpg";
   return (
-    <div className="relative h-[150vh] overflow-hidden rounded-3xl border-4 border-slate-200 my-10">
+    <div className="h-[90vh] overflow-hidden rounded-3xl border-4 border-slate-200 my-10">
       <div
         className={`h-full bg-cover bg-center flex items-center justify-center ${styles.slideIn}`}
         style={{ backgroundImage: `url('/assets/cover.jpg')` }}

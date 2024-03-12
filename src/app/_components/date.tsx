@@ -5,7 +5,7 @@ const DateView = () => {
   const weddingDate = new Date(2024, 9, 27);
 
   return (
-    <div className="w-full h-[100vh] flex flex-col items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10 justify-center">
+    <div className="h-[90vh] flex flex-col items-center bg-rose-700 rounded-3xl border-4 border-slate-200 my-10 justify-center">
       <div className="text-4xl mb-4 font-bold font-sans text-white">
         日期 Mark the Time
       </div>
