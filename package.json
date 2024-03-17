@@ -16,8 +16,11 @@
     "react-calendar": "^4.8.0",
     "react-dom": "^18",
     "react-leaflet": "^4.2.1",
+    "react-select": "^5.8.0",
+    "react-spinners": "^0.13.8",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.10",

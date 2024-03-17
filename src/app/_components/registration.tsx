@@ -2,15 +2,18 @@
 
 import { useState } from "react";
 
-const Registration = () => {
+type Props = {
+  mobileNo: string;
+};
+
+const Registration = ({ mobileNo }: Props) => {
   const [noPax, setNoPax] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
   const [dietaryOption, setDietaryOption] = useState("");
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     // Handle form submission here
-    console.log("Submitted:", { noPax, phoneNo, dietaryOption });
+    console.log("Submitted:", { noPax, dietaryOption });
   };
 
   return (
@@ -29,13 +32,7 @@ const Registration = () => {
           />
         </label>
         <label className="text-lg font-serif mb-2">
-          电话号码 Phone No:
-          <input
-            type="tel"
-            value={phoneNo}
-            onChange={(e) => setPhoneNo(e.target.value)}
-            required
-          />
+          电话号码 Phone No: {mobileNo}
         </label>
         <label className="text-lg font-serif mb-2">
           用膳 Dietary Option:
