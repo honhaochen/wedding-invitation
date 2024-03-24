@@ -1,19 +1,48 @@
 "use client";
 
 import { useState } from "react";
+import { postContactForm } from "@/app/_hooks/data";
+import BeatLoader from "react-spinners/BeatLoader";
 
 type Props = {
-  mobileNo: string;
+  inviteeName: string;
+  hasSubmitted: boolean;
 };
 
-const Registration = ({ mobileNo }: Props) => {
+const Registration = ({ inviteeName, hasSubmitted }: Props) => {
   const [noPax, setNoPax] = useState("");
   const [dietaryOption, setDietaryOption] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [submitted, setSubmitted] = useState(hasSubmitted);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    // Handle form submission here
-    console.log("Submitted:", { noPax, dietaryOption });
+    if (submitted) return;
+    if (noPax === "" || dietaryOption === "" || noPax === "0") {
+      setErrorMsg("Please fill in all fields appropriately");
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const res = await postContactForm({
+        name: inviteeName,
+        numPax: parseInt(noPax),
+        dietaryOption: dietaryOption,
+      });
+      console.log(res);
+      if (res.error) {
+        setIsError(true);
+      }
+
+      if (res.result == 0) {
+        setSubmitted(true);
+      }
+    } catch (error) {
+      setIsError(true);
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -31,7 +60,11 @@ const Registration = ({ mobileNo }: Props) => {
             className="w-[50vw] md:ml-2 md:w-[30vw] text-center"
             type="number"
             value={noPax}
-            onChange={(e) => setNoPax(e.target.value)}
+            onChange={(e) => {
+              setIsError(false);
+              setErrorMsg("");
+              setNoPax(e.target.value)
+            }}
             required
           />
         </label>
@@ -40,7 +73,11 @@ const Registration = ({ mobileNo }: Props) => {
           <select
             className="w-[50vw] md:ml-2 md:w-[30vw] text-center"
             value={dietaryOption}
-            onChange={(e) => setDietaryOption(e.target.value)}
+            onChange={(e) => {
+              setIsError(false);
+              setErrorMsg("");
+              setDietaryOption(e.target.value)
+            }}
             required
           >
             <option value="">Select option</option>
@@ -48,10 +85,19 @@ const Registration = ({ mobileNo }: Props) => {
             <option value="None">None</option>
           </select>
         </label>
-        <button type="submit" className="bg-rose-500 rounded-3xl border-1 mt-2 font-body">
-          Submit
+        <button type="submit" onClick={handleSubmit} className={`bg-rose-500 rounded-3xl border-1 mt-2 font-body ${submitted ? "opacity-50" : ""}`}>
+          {isSubmitting ? <BeatLoader
+          color={"#ffffff"}
+          loading={isSubmitting}
+          size={10}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />:
+          !submitted ? "Submit" : "Submitted"}
         </button>
       </form>
+      {isError ? <div className="font-display text-white mt-4">Sorry, there was an error... Please try again</div> : null}
+      {errorMsg ? <div className="font-display text-white mt-4">{errorMsg}</div> : null}
     </div>
   );
 };

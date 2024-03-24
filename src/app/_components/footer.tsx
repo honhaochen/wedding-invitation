@@ -4,8 +4,8 @@ export function Footer() {
   return (
     <footer className="bg-rose-900">
       <Container>
-        <div className="py-14 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold font-display tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
+        <div className="py-4 flex flex-col lg:flex-row items-center mb-4">
+          <h3 className="text-4xl lg:text-[2.5rem] font-bold font-display tracking-tighter leading-tight text-center lg:text-left mb-4 lg:mb-0 lg:pr-4 lg:w-1/2">
             Created with Next.js.
           </h3>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">

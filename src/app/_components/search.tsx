@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import useContactList from "@/app/_hooks/fetch-data";
+import { useContactList } from "@/app/_hooks/data";
 import RingLoader from "react-spinners/RingLoader";
 import Select from "react-select";
 import { useRouter } from "next/navigation";

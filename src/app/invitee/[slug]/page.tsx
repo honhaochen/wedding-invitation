@@ -1,12 +1,11 @@
 "use client";
 
-import Container from "../../_components/container";
 import DateView from "@/app/_components/date";
 import Story from "@/app/_components/story";
 import Registration from "@/app/_components/registration";
 import CoverImage from "@/app/_components/cover-image";
 import dynamic from "next/dynamic";
-import useContactList from "@/app/_hooks/fetch-data";
+import { useContactList } from "@/app/_hooks/data";
 import { RingLoader } from "react-spinners";
 import { useRouter } from "next/navigation";
 
@@ -42,10 +41,12 @@ export default function Invitee({ params }: Params) {
   const providedHash = params.slug;
   var name = "";
   var mobileNo = "";
+  var submitted = false;
   for (let i = 0; i < data.length; i++) {
     if (providedHash === data[i].hash) {
       name = data[i].name;
       mobileNo = data[i].mobile_no;
+      submitted = data[i].submitted;
       break;
     }
   }
@@ -61,7 +62,7 @@ export default function Invitee({ params }: Params) {
       <Story />
       <DateView />
       <Map />
-      <Registration mobileNo={mobileNo} />
+      <Registration inviteeName={name} hasSubmitted={submitted} />
     </>
   );
 }
