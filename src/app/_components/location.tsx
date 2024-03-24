@@ -10,17 +10,20 @@ const Location = () => {
   const position: LatLngExpression = [3.1266427658925164, 101.72525945920253];
 
   return (
-    <div className="h-[90vh] flex items-center bg-rose-950 rounded-3xl border-4 border-slate-200 my-10">
-      <div className="w-3/5 p-8">
-        <h1 className="text-4xl font-bold mb-4 font-sans text-white">
-          婚礼地点 Venue
-        </h1>
-        <p className="text-lg font-serif text-white">喜粤饮食集团</p>
-        <p className="text-lg font-serif text-white">
+    <div className="h-[90vh] flex flex-col items-center justify-center bg-rose-950 rounded-3xl border-4 border-slate-200 my-10 md:flex-row">
+      <div className="w-[80vw] p-8 md:w-3/5 flex items-center justify-center flex-col md:items-start">
+        <div className="text-4xl font-bold mt-4 font-chinese text-white">
+          婚礼地点
+        </div>
+        <div className="text-4xl font-bold mt-1 font-display text-white">
+          Venue
+        </div>
+        <div className="text-lg font-chinese mt-2 text-white">喜粤饮食集团</div>
+        <div className="text-lg font-display mt-1 text-white text-center">
           Sunway Velocity Grand Imperial Group
-        </p>
+        </div>
       </div>
-      <div className="w-2/5 m-8">
+      <div className="flex justify-center items-center flex-col w-[70vw] m-8 md:w-2/5">
         <MapContainer
           className="!h-[40vh]"
           center={position}
@@ -38,6 +41,10 @@ const Location = () => {
             </Popup>
           </Marker>
         </MapContainer>
+        <button className="font-display text-white border-2 mt-1 pt-1 px-2 rounded-2xl w-1/2" onClick={() => {
+          // Open Google Maps in a new tab
+          window.open("https://maps.app.goo.gl/ZqLoxZUdpSS8BWVJ7", "_blank");
+        }}>Google Maps</button>
       </div>
     </div>
   );

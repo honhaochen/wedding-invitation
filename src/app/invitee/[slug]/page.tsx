@@ -8,6 +8,7 @@ import CoverImage from "@/app/_components/cover-image";
 import dynamic from "next/dynamic";
 import useContactList from "@/app/_hooks/fetch-data";
 import { RingLoader } from "react-spinners";
+import { useRouter } from "next/navigation";
 
 const Map = dynamic(() => import("@/app/_components/location"), {
   loading: () => <p>loading...</p>,
@@ -37,6 +38,7 @@ export default function Invitee({ params }: Params) {
     );
   }
 
+  const router = useRouter();
   const providedHash = params.slug;
   var name = "";
   var mobileNo = "";
@@ -48,15 +50,18 @@ export default function Invitee({ params }: Params) {
     }
   }
 
+  if (name === "" && mobileNo == "") {
+    router.push("/");
+    return <></>;
+  }
+
   return (
-    <main>
-      <Container>
-        <CoverImage inviteeName={name} />
-        <Story />
-        <DateView />
-        <Map />
-        <Registration mobileNo={mobileNo} />
-      </Container>
-    </main>
+    <>
+      <CoverImage inviteeName={name} />
+      <Story />
+      <DateView />
+      <Map />
+      <Registration mobileNo={mobileNo} />
+    </>
   );
 }

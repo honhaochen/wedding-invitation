@@ -12,6 +12,7 @@ const Search = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [isError, setIsError] = useState(false);
   const { data, error, isLoading } = useContactList();
+  const [bounce, setBounce] = useState(false);
   const router = useRouter();
   const handleButtonPress = () => {
     for (let i = 0; i < data.length; i++) {
@@ -23,7 +24,14 @@ const Search = () => {
         return;
       }
     }
-    setIsError(true);
+    if (isError && !bounce) {
+      setBounce(true);
+      setTimeout(() => {
+        setBounce(false);
+      }, 2000);
+    } else {
+      setIsError(true);
+    }
   };
 
   if (isLoading) {
@@ -42,8 +50,8 @@ const Search = () => {
 
   return (
     <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-slate-200 my-10">
-      <div className="text-4xl mb-8 font-bold font-sans text-white">
-        Hi, how can we address you?
+      <div className="text-2xl mb-2 font-bold font-display text-white px-4">
+        Hi, <br/>How can we address you?
       </div>
       <Select
         className="w-[50vw]"
@@ -58,12 +66,12 @@ const Search = () => {
       />
       {selectedOption ? (
         <>
-          <div className="text-2xl mt-4 font-bold font-sans text-white">
+          <div className="text-xl mt-8 font-bold font-display text-white">
             What's your mobile number?
           </div>
-          <div className="mt-2 flex justify-center items-center">
+          <div className="mt-2 flex flex-col justify-center items-center md:flex-row ">
             <Select
-              className="w-[10vw]"
+              className="w-[30vw] md:w-[10vw]"
               defaultValue={{
                 value: "60",
                 label: "+60",
@@ -82,7 +90,7 @@ const Search = () => {
             />
             <input
               type="number"
-              className="w-[35vw] ml-1 rounded-sm p-2"
+              className="w-[35vw] mt-1 rounded-sm p-2 md:ml-1 md:mt-0"
               defaultValue={mobileNumber}
               value={mobileNumber}
               onChange={(event) => {
@@ -92,13 +100,13 @@ const Search = () => {
             />
           </div>
           {isError ? (
-            <div className="text-2xl mt-4 font-bold font-sans text-white">
+            <div className={`text-xl mt-8 font-display text-white ${bounce ? "animate-bounce" : ""}`} >
               Sorry, record does not match...
             </div>
           ) : null}
           {mobileNumber ? (
             <button
-              className="text-1xl font-sans text-white border-2 mt-4 py-2 px-4 rounded-2xl"
+              className="text-1xl font-display text-white border-2 mt-4 pt-1 px-4 rounded-2xl"
               onClick={handleButtonPress}
             >
               This is Me!

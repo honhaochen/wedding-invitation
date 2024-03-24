@@ -13,13 +13,13 @@ const CoverImage = ({ inviteeName }: Props) => {
         style={{ backgroundImage: `url('/assets/cover.jpg')` }}
       >
         <div className={`text-center text-white ${styles.fadeOut}`}>
-          <h1 className="text-4xl font-bold mb-4 font-sans">
+          <h1 className="text-4xl font-bold mb-4 font-display">
             Wedding Invitation
           </h1>
           <hr />
-          <p className="text-lg font-serif">Hao Chen & Chia Qian</p>
-          <p className="text-lg font-serif">27-10-2024</p>
-          <h1 className="text-4xl font-bold mb-4 font-mono">
+          <p className="text-lg font-display mt-2">Hao Chen & Chia Qian</p>
+          <p className="text-lg font-display">27-10-2024</p>
+          <h1 className="text-xl mb-4 font-body">
             Welcome, {inviteeName}
           </h1>
         </div>
