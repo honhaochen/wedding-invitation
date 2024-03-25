@@ -7,9 +7,7 @@ export default function InviteeLayout({
 }>) {
   return (
     <main>
-      <Container>
-        {children}
-      </Container>
+      <Container>{children}</Container>
     </main>
   );
 }

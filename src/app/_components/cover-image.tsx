@@ -1,3 +1,5 @@
+"use-client";
+
 import styles from "@/app/_styles/CoverImage.module.css";
 
 type Props = {

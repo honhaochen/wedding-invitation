@@ -1,13 +1,15 @@
 "use client";
 
+import Footer from "@/app/_components/footer";
 import DateView from "@/app/_components/date";
 import Story from "@/app/_components/story";
 import Registration from "@/app/_components/registration";
 import CoverImage from "@/app/_components/cover-image";
 import dynamic from "next/dynamic";
 import { useContactList } from "@/app/_hooks/data";
-import { RingLoader } from "react-spinners";
 import { useRouter } from "next/navigation";
+import Loading from "@/app/_components/loading";
+import { useRef } from "react";
 
 const Map = dynamic(() => import("@/app/_components/location"), {
   loading: () => <p>loading...</p>,
@@ -23,19 +25,15 @@ type Params = {
 export default function Invitee({ params }: Params) {
   const router = useRouter();
   const { data, error, isLoading } = useContactList();
+  const audioRef = useRef<HTMLAudioElement>(null);
+  window.addEventListener("click", () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  });
 
   if (isLoading) {
-    return (
-      <div className="h-[90vh] flex items-center justify-center rounded-3xl border-4 border-white my-10">
-        <RingLoader
-          color={"#ffffff"}
-          loading={isLoading}
-          size={150}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />
-      </div>
-    );
+    return <Loading />;
   }
   const providedHash = params.slug;
 
@@ -58,11 +56,13 @@ export default function Invitee({ params }: Params) {
 
   return (
     <>
+      <audio ref={audioRef} src="/assets/photograph.mp3" />
       <CoverImage inviteeName={name} />
       <Story />
       <DateView />
       <Map />
       <Registration inviteeName={name} hasSubmitted={submitted} />
+      <Footer />
     </>
   );
 }

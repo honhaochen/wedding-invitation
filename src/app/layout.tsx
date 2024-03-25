@@ -1,4 +1,3 @@
-import Footer from "@/app/_components/footer";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -50,10 +49,15 @@ export default function RootLayout({
         />
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+        <link rel="preload" href="/assets/boy.png" as="image" />
+        <link rel="preload" href="/assets/boy_smile.png" as="image" />
+        <link rel="preload" href="/assets/girl.png" as="image" />
+        <link rel="preload" href="/assets/girl_smile.png" as="image" />
+        <link rel="preload" href="/assets/cover.jpg" as="image" />
+        <link rel="preload" href="/assets/story.jpg" as="image" />
       </head>
       <body className={`${inter.className} bg-off-white`}>
         <div>{children}</div>
-        <Footer />
       </body>
     </html>
   );
