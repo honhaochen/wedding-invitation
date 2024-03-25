@@ -1,10 +1,12 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, createContext } from "react";
 
 type Props = {
   children?: React.ReactNode;
 };
+
+export const PageContext = createContext<number>(0);
 
 const Container = ({ children }: Props) => {
   const containerRef = useRef<null | HTMLDivElement>(null);
@@ -24,7 +26,11 @@ const Container = ({ children }: Props) => {
     const container = containerRef.current;
     if (container) {
       container.addEventListener("wheel", handleScroll);
-      return () => container.removeEventListener("wheel", handleScroll);
+      container.addEventListener("scroll", handleScroll);
+      return () => {
+        container.removeEventListener("wheel", handleScroll);
+        container.removeEventListener("scroll", handleScroll);
+      };
     }
   }, []);
 
@@ -40,7 +46,9 @@ const Container = ({ children }: Props) => {
 
   return (
     <div ref={containerRef} className="container mx-auto px-5">
-      {children}
+      <PageContext.Provider value={activeIndex}>
+        {children}
+      </PageContext.Provider>
     </div>
   );
 };

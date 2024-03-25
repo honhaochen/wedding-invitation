@@ -21,11 +21,12 @@ type Params = {
 };
 
 export default function Invitee({ params }: Params) {
+  const router = useRouter();
   const { data, error, isLoading } = useContactList();
 
   if (isLoading) {
     return (
-      <div className="h-[90vh] flex items-center justify-center rounded-3xl border-4 border-slate-200 my-10">
+      <div className="h-[90vh] flex items-center justify-center rounded-3xl border-4 border-white my-10">
         <RingLoader
           color={"#ffffff"}
           loading={isLoading}
@@ -36,9 +37,8 @@ export default function Invitee({ params }: Params) {
       </div>
     );
   }
-
-  const router = useRouter();
   const providedHash = params.slug;
+
   var name = "";
   var mobileNo = "";
   var submitted = false;

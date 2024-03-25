@@ -5,9 +5,8 @@ type Props = {
 };
 
 const CoverImage = ({ inviteeName }: Props) => {
-  const src = "/assets/cover.jpg";
   return (
-    <div className="h-[90vh] overflow-hidden rounded-3xl border-4 border-slate-200 my-10">
+    <div className="h-[90vh] overflow-hidden rounded-3xl border-4 border-white my-10">
       <div
         className={`h-full bg-cover bg-center flex items-center justify-center ${styles.slideIn}`}
         style={{ backgroundImage: `url('/assets/cover.jpg')` }}
@@ -19,9 +18,7 @@ const CoverImage = ({ inviteeName }: Props) => {
           <hr />
           <p className="text-lg font-display mt-2">Hao Chen & Chia Qian</p>
           <p className="text-lg font-display">27-10-2024</p>
-          <h1 className="text-xl mb-4 font-body">
-            Welcome, {inviteeName}
-          </h1>
+          <h1 className="text-xl mb-4 font-body">Welcome, {inviteeName}</h1>
         </div>
       </div>
     </div>

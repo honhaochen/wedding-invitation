@@ -19,6 +19,8 @@ const config: Config = {
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
+        "off-white": "#FFF4EC",
+        "off-white-dark": "#EDC0A9",
       },
       spacing: {
         28: "7rem",

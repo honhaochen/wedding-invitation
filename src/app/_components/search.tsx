@@ -36,7 +36,7 @@ const Search = () => {
 
   if (isLoading) {
     return (
-      <div className="h-[90vh] flex items-center justify-center rounded-3xl border-4 border-slate-200 my-10">
+      <div className="h-[90vh] flex items-center justify-center rounded-3xl border-4 border-white my-10">
         <RingLoader
           color={"#ffffff"}
           loading={isLoading}
@@ -49,9 +49,10 @@ const Search = () => {
   }
 
   return (
-    <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-slate-200 my-10">
-      <div className="text-2xl mb-2 font-bold font-display text-white px-4">
-        Hi, <br/>How can we address you?
+    <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10">
+      <div className="text-2xl mb-2 font-bold font-display text-off-white-dark px-4">
+        Hi, <br />
+        How can we address you?
       </div>
       <Select
         className="w-[50vw]"
@@ -66,7 +67,7 @@ const Search = () => {
       />
       {selectedOption ? (
         <>
-          <div className="text-xl mt-8 font-bold font-display text-white">
+          <div className="text-xl mt-8 font-bold font-display text-off-white-dark">
             What's your mobile number?
           </div>
           <div className="mt-2 flex flex-col justify-center items-center md:flex-row ">
@@ -100,13 +101,17 @@ const Search = () => {
             />
           </div>
           {isError ? (
-            <div className={`text-xl mt-8 font-display text-white ${bounce ? "animate-bounce" : ""}`} >
+            <div
+              className={`text-xl mt-8 font-display text-off-white-dark ${
+                bounce ? "animate-bounce" : ""
+              }`}
+            >
               Sorry, record does not match...
             </div>
           ) : null}
           {mobileNumber ? (
             <button
-              className="text-1xl font-display text-white border-2 mt-4 pt-1 px-4 rounded-2xl"
+              className="text-1xl font-display text-off-white-dark border-2 mt-4 pt-1 px-4 rounded-2xl"
               onClick={handleButtonPress}
             >
               This is Me!

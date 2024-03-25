@@ -46,37 +46,40 @@ const Registration = ({ inviteeName, hasSubmitted }: Props) => {
   };
 
   return (
-    <div className="h-[90vh] flex flex-col items-center justify-center bg-rose-950 rounded-3xl border-4 border-slate-200 my-10">
-      <div className="text-4xl font-bold font-chinese text-white">
+    <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10">
+      <div className="text-4xl font-bold font-chinese text-off-white-dark">
         登记
       </div>
-      <div className="text-4xl mt-2 font-bold font-display text-white">
+      <div className="text-4xl mt-2 font-bold font-display text-off-white-dark">
         Registration
       </div>
-      <form onSubmit={handleSubmit} className="flex flex-col bg-slate-100 p-8 mt-4 w-[70vw] rounded-2xl">
-        <label className="text-lg font-body mb-2 ">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col bg-white p-8 mt-4 w-[70vw] rounded-2xl"
+      >
+        <label className="text-lg font-body mb-2 text-off-white-dark">
           人数 No Pax:
           <input
-            className="w-[50vw] md:ml-2 md:w-[30vw] text-center"
+            className="w-[50vw] md:ml-2 md:w-[30vw] text-center bg-off-white"
             type="number"
             value={noPax}
             onChange={(e) => {
               setIsError(false);
               setErrorMsg("");
-              setNoPax(e.target.value)
+              setNoPax(e.target.value);
             }}
             required
           />
         </label>
-        <label className="text-lg font-body mb-2">
+        <label className="text-lg font-body mb-2 text-off-white-dark">
           用膳 Dietary Option:
           <select
-            className="w-[50vw] md:ml-2 md:w-[30vw] text-center"
+            className="w-[50vw] md:ml-2 md:w-[30vw] text-center bg-off-white"
             value={dietaryOption}
             onChange={(e) => {
               setIsError(false);
               setErrorMsg("");
-              setDietaryOption(e.target.value)
+              setDietaryOption(e.target.value);
             }}
             required
           >
@@ -85,19 +88,36 @@ const Registration = ({ inviteeName, hasSubmitted }: Props) => {
             <option value="None">None</option>
           </select>
         </label>
-        <button type="submit" onClick={handleSubmit} className={`bg-rose-500 rounded-3xl border-1 mt-2 font-body ${submitted ? "opacity-50" : ""}`}>
-          {isSubmitting ? <BeatLoader
-          color={"#ffffff"}
-          loading={isSubmitting}
-          size={10}
-          aria-label="Loading Spinner"
-          data-testid="loader"
-        />:
-          !submitted ? "Submit" : "Submitted"}
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className={`bg-off-white text-off-white-dark rounded-3xl border-1  border-white mt-2 font-body ${
+            submitted ? "opacity-50" : ""
+          }`}
+        >
+          {isSubmitting ? (
+            <BeatLoader
+              color={"#ffffff"}
+              loading={isSubmitting}
+              size={10}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          ) : !submitted ? (
+            "Submit"
+          ) : (
+            "Submitted"
+          )}
         </button>
       </form>
-      {isError ? <div className="font-display text-white mt-4">Sorry, there was an error... Please try again</div> : null}
-      {errorMsg ? <div className="font-display text-white mt-4">{errorMsg}</div> : null}
+      {isError ? (
+        <div className="font-display text-off-white-dark mt-4">
+          Sorry, there was an error... Please try again
+        </div>
+      ) : null}
+      {errorMsg ? (
+        <div className="font-display text-off-white-dark mt-4">{errorMsg}</div>
+      ) : null}
     </div>
   );
 };
