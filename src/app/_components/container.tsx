@@ -12,7 +12,10 @@ const Container = ({ children }: Props) => {
   const containerRef = useRef<null | HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0); // State for active card index
 
-  const handleScroll = () => {
+  async function handleScroll() {
+    // busy wait for 1 sec
+    await new Promise((resolve) => setTimeout(resolve, 200));
+
     const containerHeight = window.scrollY;
     const singleChildHeight = window.innerHeight;
 
@@ -20,16 +23,18 @@ const Container = ({ children }: Props) => {
 
     // Ensure index is within valid range
     setActiveIndex(index);
-  };
+  }
 
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
       container.addEventListener("wheel", handleScroll);
       container.addEventListener("scroll", handleScroll);
+      container.addEventListener("touchend", handleScroll);
       return () => {
         container.removeEventListener("wheel", handleScroll);
         container.removeEventListener("scroll", handleScroll);
+        container.removeEventListener("touchend", handleScroll);
       };
     }
   }, []);
