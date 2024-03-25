@@ -1,31 +1,29 @@
-@keyframes leftToRight {
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes fadeOut {
   0% {
-    transform: translateX(-50%);
+    opacity: 0;
   }
   50% {
-    transform: translateX(10%);
+    opacity: 0;
   }
   100% {
-    transform: translateX(-50%);
+    opacity: 1;
   }
 }
 
-@keyframes rightToLeft {
-  0% {
-    transform: translateX(50%);
-  }
-  50% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(50%);
-  }
+.slideIn {
+  animation: slideIn 1s ease-out;
 }
 
-.left {
-  animation: leftToRight 10s linear infinite;
-}
-
-.right {
-  animation: rightToLeft 10s linear infinite;
+.fadeOut {
+  animation: fadeOut 2s ease-out;
 }
