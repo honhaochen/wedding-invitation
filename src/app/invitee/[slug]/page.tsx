@@ -9,7 +9,8 @@ import dynamic from "next/dynamic";
 import { useContactList } from "@/app/_hooks/data";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
-import { useRef } from "react";
+import Door from "@/app/_components/door";
+import { useRef, useState } from "react";
 
 const Map = dynamic(() => import("@/app/_components/location"), {
   loading: () => <p>loading...</p>,
@@ -24,6 +25,7 @@ type Params = {
 
 export default function Invitee({ params }: Params) {
   const router = useRouter();
+  const [open, setOpen] = useState(false);
   const { data, error, isLoading } = useContactList();
   const audioRef = useRef<HTMLAudioElement>(null);
   window.addEventListener("click", () => {
@@ -57,12 +59,18 @@ export default function Invitee({ params }: Params) {
   return (
     <>
       <audio ref={audioRef} src="/assets/photograph.mp3" />
-      <CoverImage inviteeName={name} />
-      <Story />
-      <DateView />
-      <Map />
-      <Registration inviteeName={name} hasSubmitted={submitted} />
-      <Footer />
+      {open ? (
+        <>
+          <CoverImage inviteeName={name} />
+          <Story />
+          <DateView />
+          <Map />
+          <Registration inviteeName={name} hasSubmitted={submitted} />
+          <Footer />
+        </>
+      ) : (
+        <Door setOpen={setOpen} />
+      )}
     </>
   );
 }
