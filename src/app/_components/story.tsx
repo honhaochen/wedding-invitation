@@ -18,7 +18,7 @@ const Story = () => {
       {show && (
         <div className="flex flex-col md:flex-row">
           <div
-            className={`w-[50vw] h-[55vh] md:h-[70vh] md:absolute md:left-4 rounded-3xl rotate-[-10deg] ${styles.slideIn}`}
+            className={`w-[50vw] h-[55vh] md:h-[70vh] md:absolute md:left-4 md:top-4 rounded-3xl ${styles.slideIn}`}
             style={{
               backgroundImage: `url('/assets/story.jpg')`,
               backgroundSize: "contain",
