@@ -39,16 +39,6 @@ const Container = ({ children }: Props) => {
     }
   }, []);
 
-  useEffect(() => {
-    const singleChildHeight = window.innerHeight;
-
-    // Smooth scroll to center the card, considering container height:
-    window.scrollTo({
-      top: singleChildHeight * activeIndex - 50 * activeIndex,
-      behavior: "smooth",
-    });
-  }, [activeIndex]);
-
   return (
     <div ref={containerRef} className="container mx-auto px-5">
       <PageContext.Provider value={activeIndex}>
