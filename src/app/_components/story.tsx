@@ -16,9 +16,9 @@ const Story = () => {
   return (
     <div className="h-[90vh] relative flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10 overflow-hidden">
       {show && (
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row flex-wrap">
           <div
-            className={`w-[50vw] h-[55vh] md:h-[70vh] md:absolute md:left-4 md:top-4 rounded-3xl ${styles.slideIn}`}
+            className={`w-[40vw] h-[55vh] rounded-3xl ${styles.slideIn} md:w-[80vw]`}
             style={{
               backgroundImage: `url('/assets/story.jpg')`,
               backgroundSize: "contain",
@@ -27,18 +27,15 @@ const Story = () => {
             }}
           />
           <div
-            className={`w-[50vw] md:absolute md:right-0 flex flex-col justify-center items-center py-8 md:pl-16 ${styles.fadeOut}`}
+            className={`w-[40vw] flex flex-col justify-center items-center py-8 ${styles.fadeOut} md:w-[80vw]`}
           >
-            <div className="relative w-[max-content] text-off-white-dark mb-1 font-chinese before:absolute before:inset-0 before:animate-typewriter1 before:bg-off-white">
+            <div className="w-[max-content] text-off-white-dark mb-1 font-chinese">
               天缘巧合结连理
-            </div>
-            <div className="relative w-[max-content] text-off-white-dark mb-1 font-chinese before:absolute before:inset-0 before:animate-typewriter2 before:bg-off-white">
+              <br />
               百年好合永相伴
-            </div>
-            <div className="relative w-[max-content] text-off-white-dark mb-1 font-chinese before:absolute before:inset-0 before:animate-typewriter3 before:bg-off-white">
+              <br />
               修身齐家谐天下
-            </div>
-            <div className="relative w-[max-content] text-off-white-dark font-chinese before:absolute before:inset-0 before:animate-typewriter4 before:bg-off-white">
+              <br />
               让我爱你到晚霞
             </div>
           </div>
