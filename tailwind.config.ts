@@ -39,7 +39,7 @@ const config: Config = {
         md: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
       fontFamily: {
-        display: ["Papyrus", "ui-serif"],
+        display: ["Elsie", "ui-serif"],
         body: ["Comic Sans MS", "Comic Sans", "ui-sans-serif"],
         chinese: [
           "Yuanti SC",
