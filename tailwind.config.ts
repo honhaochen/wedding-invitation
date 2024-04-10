@@ -55,6 +55,7 @@ const config: Config = {
       animation: {
         shake: "shake 2s",
         flip: "flip 2s",
+        appear: "appear 0.2s"
       },
       keyframes: {
         flip: {
@@ -67,6 +68,14 @@ const config: Config = {
             transform: "rotateX(-90deg)",
             opacity: "0",
             transformOrigin: "top",
+          },
+        },
+        appear: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
           },
         },
       },
