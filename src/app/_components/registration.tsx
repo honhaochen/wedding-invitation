@@ -55,7 +55,7 @@ const Registration = ({ inviteeName, hasSubmitted }: Props) => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col bg-white p-8 mt-4 w-[70vw] rounded-2xl"
+        className="flex flex-col bg-white p-8 m-4 rounded-2xl"
       >
         <label className="text-lg font-body mb-2 text-off-white-dark">
           人数 No Pax:

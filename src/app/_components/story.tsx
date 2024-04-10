@@ -16,9 +16,9 @@ const Story = () => {
   return (
     <div className="h-[90vh] relative flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10 overflow-hidden">
       {show && (
-        <div className="flex flex-col md:flex-row flex-wrap">
+        <div className="flex flex-col flex-wrap items-center">
           <div
-            className={`w-[40vw] h-[55vh] rounded-3xl ${styles.slideIn} md:w-[80vw]`}
+            className={`w-[60vw] h-[50vh] ${styles.slideIn}`}
             style={{
               backgroundImage: `url('/assets/story.jpg')`,
               backgroundSize: "contain",
@@ -27,9 +27,9 @@ const Story = () => {
             }}
           />
           <div
-            className={`w-[40vw] flex flex-col justify-center items-center py-8 ${styles.fadeOut} md:w-[80vw]`}
+            className={`w-[40vw] flex flex-col justify-center items-center py-8 ${styles.fadeOut}`}
           >
-            <div className="w-[max-content] text-off-white-dark mb-1 font-chinese">
+            <div className="text-off-white-dark mb-1 font-chinese">
               天缘巧合结连理
               <br />
               百年好合永相伴

@@ -40,7 +40,7 @@ const Container = ({ children }: Props) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="container mx-auto px-5">
+    <div ref={containerRef} className="container mx-auto px-5 md:px-40">
       <PageContext.Provider value={activeIndex}>
         {children}
       </PageContext.Provider>

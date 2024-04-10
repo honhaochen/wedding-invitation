@@ -13,7 +13,9 @@ const CoverImage = ({ inviteeName }: Props) => {
         className={`h-full bg-cover bg-center flex items-center justify-center ${styles.slideIn}`}
         style={{ backgroundImage: `url('/assets/cover.jpg')` }}
       >
-        <div className={`text-center text-white ${styles.fadeOut}`}>
+        <div
+          className={`text-center text-off-white ${styles.fadeOut} bg-[rgb(76,76,76)] p-2 bg-opacity-30 rounded-2xl`}
+        >
           <h1 className="text-4xl font-bold mb-4 font-display">
             Wedding Invitation
           </h1>

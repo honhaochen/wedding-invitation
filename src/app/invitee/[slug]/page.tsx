@@ -10,7 +10,9 @@ import { useContactList } from "@/app/_hooks/data";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import Door from "@/app/_components/door";
-import { useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
+import { MdOutlineMusicNote } from "react-icons/md";
+import { MdOutlineMusicOff } from "react-icons/md";
 
 const Map = dynamic(() => import("@/app/_components/location"), {
   loading: () => <p>loading...</p>,
@@ -26,13 +28,26 @@ type Params = {
 export default function Invitee({ params }: Params) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [musicOn, setMusicOn] = useState(false);
+  const isFirstTime = useRef(true);
   const { data, error, isLoading } = useContactList();
   const audioRef = useRef<HTMLAudioElement>(null);
   window.addEventListener("click", () => {
-    if (audioRef.current) {
+    if (audioRef.current && isFirstTime.current) {
       audioRef.current.play();
+      setMusicOn(false);
+      isFirstTime.current = false;
     }
   });
+
+  const handleMusicButton = () => {
+    setMusicOn(!musicOn);
+    if (audioRef.current && musicOn) {
+      audioRef.current.muted = false;
+    } else if (audioRef.current && !musicOn) {
+      audioRef.current.muted = true;
+    }
+  };
 
   if (isLoading) {
     return <Loading />;
@@ -59,6 +74,16 @@ export default function Invitee({ params }: Params) {
   return (
     <>
       <audio ref={audioRef} src="/assets/photograph.mp3" />
+      <button
+        onClick={handleMusicButton}
+        className="absolute right-1 bottom-1 w-8 h-8 z-10"
+      >
+        {musicOn ? (
+          <MdOutlineMusicOff className="w-full h-full" />
+        ) : (
+          <MdOutlineMusicNote className="w-full h-full" />
+        )}
+      </button>
       {open ? (
         <>
           <CoverImage inviteeName={name} />

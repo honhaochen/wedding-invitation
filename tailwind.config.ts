@@ -54,15 +54,19 @@ const config: Config = {
       },
       animation: {
         shake: "shake 2s",
-        typewriter1: "typewriter 1.5s steps(7) forwards 2s",
-        typewriter2: "typewriter 1.5s steps(7) forwards 3.5s",
-        typewriter3: "typewriter 1.5s steps(7) forwards 5s",
-        typewriter4: "typewriter 1.5s steps(7) forwards 6.5s",
+        flip: "flip 2s",
       },
       keyframes: {
-        typewriter: {
-          to: {
-            left: "100%",
+        flip: {
+          "0%": {
+            transform: "rotateX(0)",
+            opacity: "1",
+            transformOrigin: "top",
+          },
+          "100%": {
+            transform: "rotateX(-90deg)",
+            opacity: "0",
+            transformOrigin: "top",
           },
         },
       },

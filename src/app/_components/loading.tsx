@@ -19,7 +19,7 @@ const Loading = () => {
       <div className="text-2xl mt-4 font-bold font-chinese text-off-white-dark text-center">
         ~ 执子之手，与子偕老 ~
       </div>
-      <div className="flex justify-center items-center overflow-hidde">
+      <div className="flex justify-center items-center">
         <div
           className="w-[40vw] h-[40vw] md:w-[20vw] md:h-[30vh]"
           style={{
