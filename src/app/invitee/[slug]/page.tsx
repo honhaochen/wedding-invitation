@@ -76,7 +76,7 @@ export default function Invitee({ params }: Params) {
       <audio ref={audioRef} src="/assets/photograph.mp3" />
       <button
         onClick={handleMusicButton}
-        className="absolute right-1 bottom-1 w-8 h-8 z-10"
+        className="fixed right-1 bottom-1 w-8 h-8 z-10"
       >
         {musicOn ? (
           <MdOutlineMusicOff className="w-full h-full" />

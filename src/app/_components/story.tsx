@@ -68,26 +68,20 @@ const Story = () => {
   }, [activeIndex]);
 
   return (
-    <div className="h-[90vh] relative flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10 overflow-hidden">
+    <div className="h-[90vh] rounded-3xl border-4 border-white my-10 overflow-hidden">
       {show && (
-        <div className="flex flex-col flex-wrap items-center just">
+        <div
+          className={`h-full bg-cover bg-center flex justify-start items-start ${styles.slideIn}`}
+          style={{ backgroundImage: `url('/assets/story.jpg')` }}
+        >
           <div
-            className={`w-[60vw] h-[50vh] ${styles.slideIn}`}
-            style={{
-              backgroundImage: `url('/assets/story.jpg')`,
-              backgroundSize: "contain",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          />
-          <div
-            className={`w-[40vw] justify-center items-center text-center py-8`}
+            className={`items-center justify-center text-center p-4 bg-white bg-opacity-30 rounded-2xl mt-10 ml-10`}
           >
             {words.map((word, index) => {
               if (word === "br") {
                 return <br key={index} />;
               } else {
-                return <Word word={word} delay={250 * index} />;
+                return <Word word={word} delay={250 * (index + 1)} />;
               }
             })}
           </div>
