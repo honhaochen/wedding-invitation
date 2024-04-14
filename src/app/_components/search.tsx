@@ -60,9 +60,9 @@ const Search = () => {
           <div className="text-xl mt-8 font-bold font-display text-off-white-dark">
             What's your mobile number?
           </div>
-          <div className="mt-2 flex flex-col justify-center items-center md:flex-row ">
+          <div className="mt-2 flex flex-row justify-center items-center">
             <Select
-              className="w-[30vw] md:w-[10vw]"
+              className="w-[25vw] md:w-[10vw]"
               defaultValue={{
                 value: "60",
                 label: "+60",
@@ -81,7 +81,7 @@ const Search = () => {
             />
             <input
               type="number"
-              className="w-[35vw] mt-1 rounded-sm p-2 md:ml-1 md:mt-0"
+              className="w-[35vw] mt-1 rounded-sm p-2 ml-1 md:mt-0"
               defaultValue={mobileNumber}
               value={mobileNumber}
               onChange={(event) => {
