@@ -18,9 +18,9 @@ const Door = ({ setOpen }: Props) => {
   return (
     <div className="h-[100vh] w-[100vw] flex-row items-center justify-center flex absolute top-0 left-0 overflow-hidden">
       <div
-        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center border-r-2 ${
+        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center border-r-2 origin-left ${
           slide && styles.slideLeft
-        } ${slide && "translate-x-[-100%]"}`}
+        } ${slide && "[transform:rotate(-90deg)]"}`}
       >
         <div
           className="w-[50vw] h-[40vw] md:w-[50vw] md:h-[30vh]"
@@ -31,24 +31,36 @@ const Door = ({ setOpen }: Props) => {
             backgroundRepeat: "no-repeat",
           }}
         />
+        <GiDoorRingHandle
+          className={`text-[rgb(196,147,57)] w-10 h-auto fill-current ${
+            click ? "animate-flip opacity-0" : "animate-bounce"
+          }`}
+          onClick={async () => {
+            setClick(true);
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            setSlide(true);
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setOpen(true);
+          }}
+        />
       </div>
-      <GiDoorRingHandle
-        className={`text-[rgb(196,147,57)] w-16 h-auto fill-current absolute ${
-          click ? "animate-flip opacity-0" : "animate-bounce"
-        }`}
-        onClick={async () => {
-          setClick(true);
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          setSlide(true);
-          await new Promise((resolve) => setTimeout(resolve, 1000));
-          setOpen(true);
-        }}
-      />
       <div
-        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center border-l-2 ${
+        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center border-l-2 origin-right ${
           slide && styles.slideRight
-        } ${slide && "translate-x-[100%]"}`}
+        } ${slide && "[transform:rotate(90deg)]"}`}
       >
+        <GiDoorRingHandle
+          className={`text-[rgb(196,147,57)] w-10 h-auto fill-current ${
+            click ? "animate-flip opacity-0" : "animate-bounce"
+          }`}
+          onClick={async () => {
+            setClick(true);
+            await new Promise((resolve) => setTimeout(resolve, 500));
+            setSlide(true);
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setOpen(true);
+          }}
+        />
         <div
           className="w-[50vw] h-[40vw] md:w-[50vw] md:h-[30vh]"
           style={{

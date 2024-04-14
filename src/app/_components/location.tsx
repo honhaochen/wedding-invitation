@@ -44,7 +44,7 @@ const Location = () => {
           </Marker>
         </MapContainer>
         <button
-          className="font-display text-off-white-dark border-2 border-white mt-2 pt-1 px-2 rounded-2xl w-1/2 bg-slate-100"
+          className="font-display text-off-white-dark border-2 border-white mt-2 pt-1 px-2 rounded-2xl w-1/2 bg-[#d8cab8]"
           onClick={() => {
             // Open Google Maps in a new tab
             window.open("https://maps.app.goo.gl/ZqLoxZUdpSS8BWVJ7", "_blank");

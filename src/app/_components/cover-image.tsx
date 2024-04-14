@@ -14,7 +14,7 @@ const CoverImage = ({ inviteeName }: Props) => {
         style={{ backgroundImage: `url('/assets/cover.jpg')` }}
       >
         <div
-          className={`text-center text-off-white ${styles.fadeOut} bg-[rgb(76,76,76)] p-2 bg-opacity-30 rounded-2xl`}
+          className={`text-center text-off-white ${styles.fadeOut} bg-[rgb(76,76,76)] p-2 bg-opacity-30 m-2 rounded-2xl`}
         >
           <h1 className="text-4xl font-bold mb-4 font-display">
             Wedding Invitation
