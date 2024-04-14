@@ -70,20 +70,50 @@ const Story = () => {
   return (
     <div className="h-[90vh] rounded-3xl border-4 border-white my-10 overflow-hidden">
       {show && (
-        <div
-          className={`h-full bg-cover bg-center flex justify-start items-start ${styles.slideIn}`}
-          style={{ backgroundImage: `url('/assets/story.jpg')` }}
-        >
+        <div className="h-full flex flex-col">
           <div
-            className={`items-center justify-center text-center p-4 bg-white bg-opacity-30 rounded-2xl mt-10 ml-10`}
+            className={`h-[45vh] flex flex-row items-center ${styles.fadeOut}`}
           >
-            {words.map((word, index) => {
-              if (word === "br") {
-                return <br key={index} />;
-              } else {
-                return <Word word={word} delay={250 * (index + 1)} />;
-              }
-            })}
+            <div
+              className="w-[60vw] h-full"
+              style={{
+                backgroundImage: `url('/assets/story.jpg')`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <div
+              className={`items-center justify-center text-center mx-4 rounded-2xl w-[40vw]`}
+            >
+              {words.map((word, index) => {
+                if (word === "br") {
+                  return <br key={index} />;
+                } else {
+                  return <Word word={word} delay={250 * (index + 1)} />;
+                }
+              })}
+            </div>
+          </div>
+          <div className="h-[45vh] flex flex-row">
+            <div
+              className={`w-[50vw] h-full mt-8 ${styles.slideInLeft}`}
+              style={{
+                backgroundImage: `url('/assets/story2.jpg')`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <div
+              className={`w-[50vw] h-full mb-8 ${styles.slideInRight}`}
+              style={{
+                backgroundImage: `url('/assets/story3.jpg')`,
+                backgroundSize: "contain",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
           </div>
         </div>
       )}

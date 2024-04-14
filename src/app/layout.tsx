@@ -55,6 +55,8 @@ export default function RootLayout({
         <link rel="preload" href="/assets/girl_smile.png" as="image" />
         <link rel="preload" href="/assets/cover.jpg" as="image" />
         <link rel="preload" href="/assets/story.jpg" as="image" />
+        <link rel="preload" href="/assets/story2.jpg" as="image" />
+        <link rel="preload" href="/assets/story3.jpg" as="image" />
       </head>
       <body className={`${inter.className} bg-off-white`}>
         <div>{children}</div>

@@ -1,6 +1,15 @@
-@keyframes slideIn {
+@keyframes slideInLeft {
   from {
     transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
   }
   to {
     transform: translateX(0);
@@ -19,8 +28,12 @@
   }
 }
 
-.slideIn {
-  animation: slideIn 1s ease-out;
+.slideInLeft {
+  animation: slideInLeft 1s ease-out;
+}
+
+.slideInRight {
+  animation: slideInRight 1s ease-out;
 }
 
 .fadeOut {
