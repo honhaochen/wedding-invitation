@@ -11,7 +11,7 @@ type Contact = {
 const mode = process.env.NODE_ENV;
 const sample_contact_list: Contact[] = [{"hash":"test", "name": "Hon Hao Chen", "mobile_no":6588870380, "submitted":false}]
 
-const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbz53FThefcjwSkm62GN0XBzx_cbjZ9--oE2Gbe5G3Hq8mYosYaEq1-lvSRLT8gB3YXbiA/exec`;
+const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbyP9DgCqh5WbyTNa9utdM5CtpYvSy4CgW2AItlDS4a8jH0L4lv8LXC_HTxzXd0H1otH-A/exec`;
 
 const useContactList = () => {
   const { data, error, isLoading, isValidating } = useSWR(
