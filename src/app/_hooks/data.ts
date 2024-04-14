@@ -11,7 +11,7 @@ type Contact = {
 const mode = process.env.NODE_ENV;
 const sample_contact_list: Contact[] = [{"hash":"test", "name": "Hon Hao Chen", "mobile_no":6588870380, "submitted":false}]
 
-const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbxu2Wrlevbf4-hz5gJEuCqmf9qU2rtVCHAL68bMgqHnLI0vm7xbFLufHShCdjzyImkO8g/exec`;
+const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbz53FThefcjwSkm62GN0XBzx_cbjZ9--oE2Gbe5G3Hq8mYosYaEq1-lvSRLT8gB3YXbiA/exec`;
 
 const useContactList = () => {
   const { data, error, isLoading, isValidating } = useSWR(
@@ -31,7 +31,7 @@ const useContactList = () => {
 };
 
 type FormData = {
-  name: string;
+  hash: string;
   numPax: number;
   dietaryOption: string;
 };
@@ -41,7 +41,7 @@ const postContactForm = async (data: FormData) => {
     redirect: "follow",
     method: "POST",
     body: JSON.stringify({
-      name: data.name,
+      hash: data.hash,
       num_pax: data.numPax,
       dietary_option: data.dietaryOption,
     }),

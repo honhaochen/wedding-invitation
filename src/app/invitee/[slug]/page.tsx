@@ -55,11 +55,13 @@ export default function Invitee({ params }: Params) {
   const providedHash = params.slug;
 
   var name = "";
+  var hash = "";
   var mobileNo = "";
   var submitted = false;
   for (let i = 0; i < data.length; i++) {
     if (providedHash === data[i].hash) {
       name = data[i].name;
+      hash = data[i].hash;
       mobileNo = data[i].mobile_no;
       submitted = data[i].submitted;
       break;
@@ -90,7 +92,7 @@ export default function Invitee({ params }: Params) {
           <Story />
           <DateView />
           <Map />
-          <Registration inviteeName={name} hasSubmitted={submitted} />
+          <Registration hash={hash} hasSubmitted={submitted} />
           <Footer />
         </>
       ) : (

@@ -5,11 +5,11 @@ import { postContactForm } from "@/app/_hooks/data";
 import BeatLoader from "react-spinners/BeatLoader";
 
 type Props = {
-  inviteeName: string;
+  hash: string;
   hasSubmitted: boolean;
 };
 
-const Registration = ({ inviteeName, hasSubmitted }: Props) => {
+const Registration = ({ hash, hasSubmitted }: Props) => {
   const [noPax, setNoPax] = useState("");
   const [dietaryOption, setDietaryOption] = useState("");
   const [isError, setIsError] = useState(false);
@@ -27,11 +27,10 @@ const Registration = ({ inviteeName, hasSubmitted }: Props) => {
     setIsSubmitting(true);
     try {
       const res = await postContactForm({
-        name: inviteeName,
+        hash: hash,
         numPax: parseInt(noPax),
         dietaryOption: dietaryOption,
       });
-      console.log(res);
       if (res.error) {
         setIsError(true);
       }
