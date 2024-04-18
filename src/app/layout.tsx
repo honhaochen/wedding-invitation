@@ -57,6 +57,8 @@ export default function RootLayout({
         <link rel="preload" href="/assets/story.jpg" as="image" />
         <link rel="preload" href="/assets/story2.jpg" as="image" />
         <link rel="preload" href="/assets/story3.jpg" as="image" />
+        <link rel="preload" href="/assets/groom.png" as="image" />
+        <link rel="preload" href="/assets/bride.png" as="image" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
