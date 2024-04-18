@@ -1,4 +1,5 @@
 import Container from "@/app/_components/container";
+import Footer from "@/app/_components/footer";
 
 export default function InviteeLayout({
   children,
@@ -8,6 +9,7 @@ export default function InviteeLayout({
   return (
     <main>
       <Container>{children}</Container>
+      <Footer />
     </main>
   );
 }

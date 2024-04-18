@@ -1,6 +1,5 @@
 "use client";
 
-import Footer from "@/app/_components/footer";
 import DateView from "@/app/_components/date";
 import Story from "@/app/_components/story";
 import Intro from "@/app/_components/intro";
@@ -95,7 +94,6 @@ export default function Invitee({ params }: Params) {
           <DateView />
           <Map />
           <Registration hash={hash} hasSubmitted={submitted} />
-          <Footer />
         </>
       ) : (
         <Door setOpen={setOpen} />
