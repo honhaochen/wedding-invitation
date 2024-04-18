@@ -23,7 +23,7 @@ const Location = () => {
     <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10 md:flex-row md:p-12">
       {show && (
         <div
-          className={`flex flex-col items-center justify-center ${styles.fadeOut}`}
+          className={`flex flex-col items-center justify-center ${styles.fadeOut} md:flex-row md:p-12`}
         >
           <div className="w-[80vw] p-8 md:w-3/5 flex items-center justify-center flex-col md:items-start">
             <div className="text-4xl font-bold mt-4 font-chinese text-off-white-dark">
