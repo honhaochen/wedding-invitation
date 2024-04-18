@@ -16,9 +16,9 @@ const Door = ({ setOpen }: Props) => {
     : "/assets/girl.png";
 
   return (
-    <div className="h-[100vh] w-[100vw] flex-row items-center justify-center flex absolute top-0 left-0 overflow-hidden">
+    <div className="h-[100vh] w-[100vw] flex-row items-center justify-center flex absolute top-0 left-0 overflow-hidden bg-white">
       <div
-        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center border-r-2 origin-left ${
+        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center mr-[0.125rem] origin-left shadow-2xl ${
           slide && styles.slideLeft
         } ${slide && "[transform:rotate(-90deg)]"}`}
       >
@@ -45,7 +45,7 @@ const Door = ({ setOpen }: Props) => {
         />
       </div>
       <div
-        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center border-l-2 origin-right ${
+        className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center origin-right ml-[0.125rem] shadow-2xl ${
           slide && styles.slideRight
         } ${slide && "[transform:rotate(90deg)]"}`}
       >
