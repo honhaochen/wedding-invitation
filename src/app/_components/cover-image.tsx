@@ -8,21 +8,46 @@ type Props = {
 
 const CoverImage = ({ inviteeName }: Props) => {
   return (
-    <div className="h-[90vh] overflow-hidden rounded-3xl border-4 border-white my-10">
+    <div className="h-[90vh] overflow-hidden my-10 relative flex items-center justify-center rounded-3xl border-4 border-white">
       <div
-        className={`h-full bg-cover bg-center flex items-center justify-center ${styles.slideIn}`}
-        style={{ backgroundImage: `url('/assets/cover.jpg')` }}
+        className={`h-[63vh] w-[75vw] bg-cover bg-center flex items-center justify-center ${styles.slideIn} absolute bottom-4 rounded-t-3xl`}
+        style={{
+          backgroundImage: `url('/assets/cover.jpg')`,
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+      <div
+        className={`text-center text-off-white-dark ${styles.fadeOut} p-2 m-2 rounded-2xl absolute top-8`}
       >
-        <div
-          className={`text-center text-off-white ${styles.fadeOut} bg-[rgb(76,76,76)] p-2 bg-opacity-30 m-2 rounded-2xl`}
-        >
-          <h1 className="text-4xl font-bold mb-4 font-display">
-            Wedding Invitation
-          </h1>
-          <hr />
-          <p className="text-lg font-display mt-2">Hao Chen & Chia Qian</p>
-          <p className="text-lg font-display">27-10-2024</p>
-          <h1 className="text-xl mb-4 font-body">Welcome, {inviteeName}</h1>
+        <div className="text-xl font-bold mb-4 font-display">
+          Hao Chen & Chia Qian
+        </div>
+        <div className="text-base mb-4 font-body leading-[0.4rem]">
+          Joyfully Invite You,{" "}
+          <span className="text-off-white-light">{inviteeName}</span>
+        </div>
+        <div className="text-base mb-4 font-body leading-[0.4rem]">
+          To Our Wedding Celebration
+        </div>
+      </div>
+      <div
+        className={`text-center text-off-white-dark ${styles.fadeOut} p-2 m-2 rounded-2xl absolute bottom-2 left-0`}
+      >
+        <div className="text-base font-bold mb-2 font-display">Where?</div>
+        <div className="text-sm mb-4 font-body leading-[0.125rem]">
+          Sunway Velocity
+        </div>
+        <div className="text-sm mb-4 font-body leading-[0.125rem]">KL</div>
+      </div>
+      <div
+        className={`text-center text-off-white-dark ${styles.fadeOut} p-2 m-2 rounded-2xl absolute bottom-2 right-0`}
+      >
+        <div className="text-base font-bold mb-2 font-display">When?</div>
+        <div className="text-sm mb-4 font-body leading-[0.125rem]">Sunday</div>
+        <div className="text-sm mb-4 font-body leading-[0.125rem]">
+          27 October 2024
         </div>
       </div>
     </div>

@@ -57,6 +57,20 @@ export default function RootLayout({
         <link rel="preload" href="/assets/story.jpg" as="image" />
         <link rel="preload" href="/assets/story2.jpg" as="image" />
         <link rel="preload" href="/assets/story3.jpg" as="image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=PT+Sans+Narrow:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=PT+Sans+Narrow:wght@400;700&family=ZCOOL+KuaiLe&display=swap"
+          rel="stylesheet"
+        ></link>
       </head>
       <body className={`${inter.className} bg-off-white`}>
         <div>{children}</div>

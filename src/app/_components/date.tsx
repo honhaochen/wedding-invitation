@@ -13,10 +13,10 @@ const DateView = () => {
         Mark the Time
       </div>
       <div className="text-lg font-chinese text-off-white-dark">
-        2024 年 10 月 27 日 (27-10-2024)
+        2024 年 10 月 27 日
       </div>
       <div className="text-lg font-chinese text-off-white-dark">
-        7点整 (7pm)
+        1900
       </div>
       <div className="mt-8 w-[70vw] justify-center flex">
         <Calendar defaultValue={weddingDate} />

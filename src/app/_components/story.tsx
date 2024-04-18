@@ -84,15 +84,22 @@ const Story = () => {
               }}
             />
             <div
-              className={`items-center justify-center text-center mx-4 rounded-2xl w-[40vw]`}
+              className={`items-center justify-center text-center mx-4 rounded-2xl w-[40vw] flex flex-col`}
             >
-              {words.map((word, index) => {
-                if (word === "br") {
-                  return <br key={index} />;
-                } else {
-                  return <Word word={word} delay={250 * (index + 1)} />;
-                }
-              })}
+              <div className="text-lg font-bold font-display text-off-white-dark mb-16">
+                For You
+              </div>
+              <div>
+                {words.map((word, index) => {
+                  if (word === "br") {
+                    return <br key={index} />;
+                  } else {
+                    return (
+                      <Word word={word} delay={1000 + 300 * (index + 1)} />
+                    );
+                  }
+                })}
+              </div>
             </div>
           </div>
           <div className="h-[45vh] flex flex-row">

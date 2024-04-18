@@ -25,7 +25,7 @@ const Location = () => {
           Sunway Velocity Grand Imperial Group
         </div>
       </div>
-      <div className="flex justify-center items-center flex-col w-[70vw] m-8 md:w-2/5">
+      <div className="flex justify-center items-center flex-col w-[70vw] m-4 md:w-2/5">
         <MapContainer
           className="!h-[40vh]"
           center={position}
@@ -44,7 +44,7 @@ const Location = () => {
           </Marker>
         </MapContainer>
         <button
-          className="font-display text-off-white-dark border-2 border-white mt-2 pt-1 px-2 rounded-2xl w-1/2 bg-[#d8cab8] bg-opacity-50"
+          className="font-body text-white border-2 border-white mt-2 px-2 rounded-2xl w-1/2 bg-off-white-light bg-opacity-50"
           onClick={() => {
             // Open Google Maps in a new tab
             window.open("https://maps.app.goo.gl/ZqLoxZUdpSS8BWVJ7", "_blank");
