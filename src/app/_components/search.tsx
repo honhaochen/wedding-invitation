@@ -39,7 +39,7 @@ const Search = () => {
   }
 
   return (
-    <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-slate-200 my-10">
+    <div className="h-[90vh] flex flex-col items-center justify-center my-10">
       <div className="text-2xl mb-2 font-bold font-display text-off-white-dark px-4">
         Hi, <br />
         How can we address you?
@@ -101,7 +101,7 @@ const Search = () => {
           ) : null}
           {mobileNumber ? (
             <button
-              className="text-1xl font-display text-off-white-dark border-2 mt-4 pt-1 px-4 rounded-2xl"
+              className="text-1xl font-display text-white border-2 mt-4 px-4 rounded-2xl bg-off-white-light"
               onClick={handleButtonPress}
             >
               This is Me!
