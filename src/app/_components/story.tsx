@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/app/_styles/Story.module.css";
+import styles from "@/app/_styles/Common.module.css";
 import { useContext, useState, useEffect } from "react";
 import { PageContext } from "@/app/_components/container";
 
