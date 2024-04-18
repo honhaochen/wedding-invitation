@@ -3,6 +3,7 @@
 import Footer from "@/app/_components/footer";
 import DateView from "@/app/_components/date";
 import Story from "@/app/_components/story";
+import Intro from "@/app/_components/intro";
 import Registration from "@/app/_components/registration";
 import CoverImage from "@/app/_components/cover-image";
 import dynamic from "next/dynamic";
@@ -10,7 +11,7 @@ import { useContactList } from "@/app/_hooks/data";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import Door from "@/app/_components/door";
-import { use, useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { MdOutlineMusicNote } from "react-icons/md";
 import { MdOutlineMusicOff } from "react-icons/md";
 
@@ -90,6 +91,7 @@ export default function Invitee({ params }: Params) {
         <>
           <CoverImage inviteeName={name} />
           <Story />
+          <Intro />
           <DateView />
           <Map />
           <Registration hash={hash} hasSubmitted={submitted} />

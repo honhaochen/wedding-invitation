@@ -95,7 +95,7 @@ const Story = () => {
                     return <br key={index} />;
                   } else {
                     return (
-                      <Word word={word} delay={1000 + 300 * (index + 1)} />
+                      <Word word={word} delay={2000 + 300 * (index + 1)} />
                     );
                   }
                 })}
