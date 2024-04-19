@@ -13,9 +13,6 @@ const Container = ({ children }: Props) => {
   const [activeIndex, setActiveIndex] = useState<number>(0); // State for active card index
 
   async function handleScroll() {
-    // busy wait for 1 sec
-    await new Promise((resolve) => setTimeout(resolve, 200));
-
     const containerHeight = window.scrollY;
     const singleChildHeight = window.innerHeight;
 
@@ -30,10 +27,12 @@ const Container = ({ children }: Props) => {
     if (container) {
       container.addEventListener("wheel", handleScroll);
       container.addEventListener("scroll", handleScroll);
+      container.addEventListener("touchstart", handleScroll);
       container.addEventListener("touchend", handleScroll);
       return () => {
         container.removeEventListener("wheel", handleScroll);
         container.removeEventListener("scroll", handleScroll);
+        container.removeEventListener("touchstart", handleScroll);
         container.removeEventListener("touchend", handleScroll);
       };
     }
