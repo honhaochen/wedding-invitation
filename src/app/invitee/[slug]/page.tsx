@@ -5,6 +5,7 @@ import Story from "@/app/_components/story";
 import Intro from "@/app/_components/intro";
 import Registration from "@/app/_components/registration";
 import CoverImage from "@/app/_components/cover-image";
+import Footer from "@/app/_components/footer";
 import dynamic from "next/dynamic";
 import { useContactList } from "@/app/_hooks/data";
 import { useRouter } from "next/navigation";
@@ -94,6 +95,7 @@ export default function Invitee({ params }: Params) {
           <DateView />
           <Map />
           <Registration hash={hash} hasSubmitted={submitted} />
+          <Footer />
         </>
       ) : (
         <Door setOpen={setOpen} />

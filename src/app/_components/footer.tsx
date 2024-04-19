@@ -5,7 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="bg-off-white-light py-4">
+    <footer className="bg-off-white-light py-4 -mx-5 md:-mx-60">
       <div className="w-full flex flex-row items-center">
         <div className="w-1/2 flex flex-col text-center items-center">
           <div className="text-sm font-display text-white">Contact | Groom</div>
