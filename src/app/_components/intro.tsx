@@ -65,7 +65,7 @@ const Intro = () => {
             </div>
           </div>
           <div
-            className={`text-sm font-display text-off-white-dark mt-2 ${styles.fadeOut}`}
+            className={`text-sm font-bold font-display text-off-white-dark mt-2 ${styles.fadeOut}`}
           >
             Our journey together has been filled with laughter, adventure, and
             unwavering support.
