@@ -4,7 +4,6 @@ import { useContext, useState, useEffect } from "react";
 import { PageContext } from "./container";
 
 const DateView = () => {
-  const weddingDate = new Date(2024, 9, 27);
   const activeIndex = useContext(PageContext);
   const [show, setShow] = useState(false);
   useEffect(() => {
