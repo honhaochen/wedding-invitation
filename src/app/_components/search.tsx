@@ -82,8 +82,8 @@ const Search = () => {
                   label: "+353", // ireland
                 },
                 {
-                  value: "447",
-                  label: "+447", // america
+                  value: "44",
+                  label: "+44", // uk
                 },
                 {
                   value: "886",
