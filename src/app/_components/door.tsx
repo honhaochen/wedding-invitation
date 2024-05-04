@@ -4,8 +4,9 @@ import { GiDoorRingHandle } from "react-icons/gi";
 
 type Props = {
   setOpen: (open: boolean) => void;
+  setDisplaySwipeHint: (display: boolean) => void;
 };
-const Door = ({ setOpen }: Props) => {
+const Door = ({ setOpen, setDisplaySwipeHint }: Props) => {
   const [click, setClick] = useState(false);
   const [slide, setSlide] = useState(false);
   const backgroundBoyImageUrl = click
@@ -59,6 +60,10 @@ const Door = ({ setOpen }: Props) => {
             setSlide(true);
             await new Promise((resolve) => setTimeout(resolve, 1000));
             setOpen(true);
+            await new Promise((resolve) => setTimeout(resolve, 3000));
+            setDisplaySwipeHint(true);
+            await new Promise((resolve) => setTimeout(resolve, 3500));
+            setDisplaySwipeHint(false);
           }}
         />
         <div

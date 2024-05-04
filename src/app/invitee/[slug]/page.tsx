@@ -14,6 +14,7 @@ import Door from "@/app/_components/door";
 import { useRef, useState } from "react";
 import { MdOutlineMusicNote } from "react-icons/md";
 import { MdOutlineMusicOff } from "react-icons/md";
+import SwipeHint from "@/app/_components/swipe-hint";
 
 const Map = dynamic(() => import("@/app/_components/location"), {
   loading: () => <p>loading...</p>,
@@ -29,6 +30,7 @@ type Params = {
 export default function Invitee({ params }: Params) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [displaySwipeHint, setDisplaySwipeHint] = useState(false);
   const [musicOn, setMusicOn] = useState(false);
   const isFirstTime = useRef(true);
   const { data, error, isLoading } = useContactList();
@@ -87,6 +89,7 @@ export default function Invitee({ params }: Params) {
           <MdOutlineMusicNote className="w-full h-full" />
         )}
       </button>
+      {displaySwipeHint && <SwipeHint />}
       {open ? (
         <>
           <CoverImage inviteeName={name} />
@@ -98,7 +101,7 @@ export default function Invitee({ params }: Params) {
           <Footer />
         </>
       ) : (
-        <Door setOpen={setOpen} />
+        <Door setOpen={setOpen} setDisplaySwipeHint={setDisplaySwipeHint} />
       )}
     </>
   );
