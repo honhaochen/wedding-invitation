@@ -52,7 +52,7 @@ function RegisterTag() {
 
   return (
     <div
-      className="fixed right-0 top-8 w-[5rem] h-[1.7rem] font-body text-sm z-10 p-1 pr-2 rounded-l-lg border-1 bg-off-white-light"
+      className="fixed right-0 top-8 w-[5rem] h-[1.7rem] font-body text-white text-sm z-10 p-1 pr-2 rounded-l-lg border-1 bg-off-white-light"
       onClick={scrollToRegister}
     >
       Register Now
