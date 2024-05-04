@@ -71,11 +71,23 @@ const Search = () => {
               options={[
                 {
                   value: "60",
-                  label: "+60",
+                  label: "+60", // malaysia
                 },
                 {
                   value: "65",
-                  label: "+65",
+                  label: "+65", // singapore
+                },
+                {
+                  value: "353",
+                  label: "+353", // ireland
+                },
+                {
+                  value: "447",
+                  label: "+447", // america
+                },
+                {
+                  value: "886",
+                  label: "+886", // taiwan
                 },
               ]}
             />

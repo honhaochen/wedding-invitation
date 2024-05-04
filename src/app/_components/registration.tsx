@@ -8,12 +8,19 @@ import { PageContext } from "./container";
 
 type Props = {
   hash: string;
+  mobileNo: string;
   hasSubmitted: boolean;
 };
 
-const Registration = ({ hash, hasSubmitted }: Props) => {
+function validateMobile(mobile: string) {
+  const regex = /^(60|65|353|447|886)[0-9]{8}[0-9]*$/;
+  return regex.test(mobile);
+}
+
+const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
   const [noPax, setNoPax] = useState("");
   const [dietaryOption, setDietaryOption] = useState("");
+  const [mobile, setMobile] = useState(mobileNo);
   const [isError, setIsError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [submitted, setSubmitted] = useState(hasSubmitted);
@@ -30,14 +37,18 @@ const Registration = ({ hash, hasSubmitted }: Props) => {
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     if (submitted) return;
-    if (noPax === "" || dietaryOption === "" || noPax === "0") {
+    if (noPax === "" || dietaryOption === "" || noPax === "0" || !validateMobile(mobile)) {
       if (errorMsg != "") {
         setBounce(true);
         setTimeout(() => {
           setBounce(false);
         }, 2000);
       } else {
-        setErrorMsg("Please fill in all fields appropriately");
+        if (!validateMobile(mobile)) {
+          setErrorMsg("Invalid mobile format, please include country code without '+'");
+        } else {
+          setErrorMsg("Please fill in all fields appropriately");
+        }
       }
       return;
     }
@@ -45,6 +56,7 @@ const Registration = ({ hash, hasSubmitted }: Props) => {
     try {
       const res = await postContactForm({
         hash: hash,
+        mobileNo: mobile,
         numPax: parseInt(noPax),
         dietaryOption: dietaryOption,
       });
@@ -78,6 +90,21 @@ const Registration = ({ hash, hasSubmitted }: Props) => {
             onSubmit={handleSubmit}
             className="flex flex-col bg-white p-8 m-4 rounded-2xl"
           >
+            <label className="text-lg font-body mb-2 text-off-white-dark">
+              电话 Mobile No:
+              <input
+                className="w-[50vw] md:ml-2 md:w-[30vw] text-center bg-off-white"
+                type="number"
+                value={mobile}
+                onChange={(e) => {
+                  setIsError(false);
+                  setErrorMsg("");
+                  setMobile(e.target.value);
+                }}
+                disabled={mobileNo != ""}
+                required
+              />
+            </label>
             <label className="text-lg font-body mb-2 text-off-white-dark">
               人数 No Pax:
               <input

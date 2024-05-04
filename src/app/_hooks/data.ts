@@ -3,15 +3,15 @@ import useSWR from "swr";
 type Contact = {
   hash: string;
   name: string;
-  mobile_no: number;
+  mobile_no: string;
   submitted: boolean;
 }
 
 // read from os env
 const mode = process.env.NODE_ENV;
-const sample_contact_list: Contact[] = [{"hash":"test", "name": "Hon Hao Chen", "mobile_no":6588870380, "submitted":false}]
+const sample_contact_list: Contact[] = [{"hash":"test", "name": "Hon Hao Chen", "mobile_no":"", "submitted":false}]
 
-const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbyP9DgCqh5WbyTNa9utdM5CtpYvSy4CgW2AItlDS4a8jH0L4lv8LXC_HTxzXd0H1otH-A/exec`;
+const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbyADC0_tLaSKQGFMdTepbDpW7rL8bKQKot4BwDwtaRaPNw34lgl4yjBXHrLQFaZNmuM0Q/exec`;
 
 const useContactList = () => {
   const { data, error, isLoading, isValidating } = useSWR(
@@ -32,6 +32,7 @@ const useContactList = () => {
 
 type FormData = {
   hash: string;
+  mobileNo: string;
   numPax: number;
   dietaryOption: string;
 };
@@ -42,6 +43,7 @@ const postContactForm = async (data: FormData) => {
     method: "POST",
     body: JSON.stringify({
       hash: data.hash,
+      mobile_no: data.mobileNo,
       num_pax: data.numPax,
       dietary_option: data.dietaryOption,
     }),

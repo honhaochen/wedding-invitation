@@ -131,7 +131,7 @@ export default function Invitee({ params }: Params) {
           <Intro />
           <DateView />
           <Map />
-          <Registration hash={hash} hasSubmitted={submitted} />
+          <Registration mobileNo={mobileNo} hash={hash} hasSubmitted={submitted} />
           <Footer />
         </>
       ) : (
