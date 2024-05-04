@@ -5,13 +5,13 @@ import { useContext, useState, useEffect } from "react";
 import { PageContext } from "./container";
 
 const Location = () => {
-  const activeIndex = useContext(PageContext);
+  const page = useContext(PageContext);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    if (activeIndex === 4) {
+    if (page.activeIndex === 4) {
       setShow(true);
     }
-  }, [activeIndex]);
+  }, [page.activeIndex]);
 
   return (
     <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10">

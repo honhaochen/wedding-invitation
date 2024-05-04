@@ -19,13 +19,13 @@ const Registration = ({ hash, hasSubmitted }: Props) => {
   const [submitted, setSubmitted] = useState(hasSubmitted);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [bounce, setBounce] = useState(false);
-  const activeIndex = useContext(PageContext);
+  const page = useContext(PageContext);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    if (activeIndex === 5) {
+    if (page.activeIndex === 5) {
       setShow(true);
     }
-  }, [activeIndex]);
+  }, [page.activeIndex]);
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();

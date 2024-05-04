@@ -59,13 +59,13 @@ const Word = ({ word, delay }: { word: string; delay: number }) => {
 };
 
 const Story = () => {
-  const activeIndex = useContext(PageContext);
+  const page = useContext(PageContext);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    if (activeIndex === 1) {
+    if (page.activeIndex === 1) {
       setShow(true);
     }
-  }, [activeIndex]);
+  }, [page.activeIndex]);
 
   return (
     <div className="h-[90vh] rounded-3xl border-4 border-white my-10 overflow-hidden">
@@ -95,7 +95,11 @@ const Story = () => {
                     return <br key={index} />;
                   } else {
                     return (
-                      <Word word={word} delay={2000 + 300 * (index + 1)} />
+                      <Word
+                        word={word}
+                        delay={2000 + 300 * (index + 1)}
+                        key={index}
+                      />
                     );
                   }
                 })}

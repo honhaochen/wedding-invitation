@@ -17,7 +17,7 @@ const Door = ({ setOpen, setDisplaySwipeHint }: Props) => {
     : "/assets/girl.png";
 
   return (
-    <div className="h-[100vh] w-[100vw] flex-row items-center justify-center flex absolute top-0 left-0 overflow-hidden bg-white">
+    <div className="h-[100vh] w-[100vw] flex-row items-center justify-center flex absolute top-0 left-0 overflow-hidden bg-white z-20">
       <div
         className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center mr-[0.125rem] origin-left shadow-2xl ${
           slide && styles.slideLeft

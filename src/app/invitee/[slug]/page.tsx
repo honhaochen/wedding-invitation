@@ -11,10 +11,11 @@ import { useContactList } from "@/app/_hooks/data";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import Door from "@/app/_components/door";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { MdOutlineMusicNote } from "react-icons/md";
 import { MdOutlineMusicOff } from "react-icons/md";
 import SwipeHint from "@/app/_components/swipe-hint";
+import { PageContext } from "@/app/_components/container";
 
 const Map = dynamic(() => import("@/app/_components/location"), {
   loading: () => <p>loading...</p>,
@@ -26,6 +27,38 @@ type Params = {
     slug: string;
   };
 };
+
+function RegisterTag() {
+  const page = useContext(PageContext);
+  const scrollToRegister = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight * 4,
+      behavior: "smooth",
+    });
+    page.setActiveIndex(5);
+    setTimeout(() => {
+      page.setActiveIndex(4);
+    }, 1000);
+    setTimeout(() => {
+      page.setActiveIndex(3);
+    }, 2000);
+    setTimeout(() => {
+      page.setActiveIndex(2);
+    }, 3000);
+    setTimeout(() => {
+      page.setActiveIndex(1);
+    }, 4000);
+  };
+
+  return (
+    <div
+      className="fixed right-0 top-8 w-[5rem] h-[1.7rem] font-body text-sm z-10 p-1 pr-2 rounded-l-lg border-1 bg-off-white-light"
+      onClick={scrollToRegister}
+    >
+      Register Now
+    </div>
+  );
+}
 
 export default function Invitee({ params }: Params) {
   const router = useRouter();
@@ -90,6 +123,7 @@ export default function Invitee({ params }: Params) {
         )}
       </button>
       {displaySwipeHint && <SwipeHint />}
+      {<RegisterTag />}
       {open ? (
         <>
           <CoverImage inviteeName={name} />

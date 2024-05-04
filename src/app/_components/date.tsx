@@ -4,13 +4,13 @@ import { useContext, useState, useEffect } from "react";
 import { PageContext } from "./container";
 
 const DateView = () => {
-  const activeIndex = useContext(PageContext);
+  const page = useContext(PageContext);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    if (activeIndex === 3) {
+    if (page.activeIndex === 3) {
       setShow(true);
     }
-  }, [activeIndex]);
+  }, [page.activeIndex]);
 
   return (
     <div className="h-[90vh] flex flex-col items-center rounded-3xl border-4 border-white my-10 justify-center">

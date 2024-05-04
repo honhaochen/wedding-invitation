@@ -6,7 +6,10 @@ type Props = {
   children?: React.ReactNode;
 };
 
-export const PageContext = createContext<number>(0);
+export const PageContext = createContext({
+  activeIndex: 0,
+  setActiveIndex: (index: number) => {},
+});
 
 const Container = ({ children }: Props) => {
   const containerRef = useRef<null | HTMLDivElement>(null);
@@ -40,7 +43,7 @@ const Container = ({ children }: Props) => {
 
   return (
     <div ref={containerRef} className="container mx-auto px-5 md:px-40">
-      <PageContext.Provider value={activeIndex}>
+      <PageContext.Provider value={{ activeIndex, setActiveIndex }}>
         {children}
       </PageContext.Provider>
     </div>

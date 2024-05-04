@@ -5,13 +5,13 @@ import { useContext, useState, useEffect } from "react";
 import { PageContext } from "@/app/_components/container";
 
 const Intro = () => {
-  const activeIndex = useContext(PageContext);
+  const page = useContext(PageContext);
   const [show, setShow] = useState(false);
   useEffect(() => {
-    if (activeIndex === 2) {
+    if (page.activeIndex === 2) {
       setShow(true);
     }
-  }, [activeIndex]);
+  }, [page.activeIndex]);
 
   return (
     <div className="h-[90vh] rounded-3xl border-4 border-white my-10 overflow-hidden">
