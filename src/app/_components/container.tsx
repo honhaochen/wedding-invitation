@@ -14,7 +14,7 @@ const Container = ({ children }: Props) => {
 
   async function handleScroll() {
     const containerHeight = window.scrollY;
-    const singleChildHeight = window.innerHeight;
+    const singleChildHeight = (window.innerHeight * 4) / 5;
 
     const index = Math.round(containerHeight / singleChildHeight);
 
