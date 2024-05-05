@@ -13,16 +13,23 @@ export function Footer() {
             +65 88870380
           </div>
           <div className="w-3/5 flex flex-row justify-evenly">
-            <FaInstagram
-              onClick={() => {
-                window.open("https://www.instagram.com/im_henryhon/", "_blank");
-              }}
-            />
-            <FaFacebook
-              onClick={() => {
-                window.open("https://www.facebook.com/HenryHCz", "_blank");
-              }}
-            />
+            <button>
+              <FaInstagram
+                onClick={() => {
+                  window.open(
+                    "https://www.instagram.com/im_henryhon/",
+                    "_blank"
+                  );
+                }}
+              />
+            </button>
+            <button>
+              <FaFacebook
+                onClick={() => {
+                  window.open("https://www.facebook.com/HenryHCz", "_blank");
+                }}
+              />
+            </button>
           </div>
         </div>
         <div className="w-1/2 flex flex-col text-center items-center">
@@ -31,16 +38,26 @@ export function Footer() {
             +65 96470861
           </div>
           <div className="w-3/5 flex flex-row justify-evenly">
-            <FaInstagram
-              onClick={() => {
-                window.open("https://www.instagram.com/_chiaqian_/", "_blank");
-              }}
-            />
-            <FaFacebook
-              onClick={() => {
-                window.open("https://www.facebook.com/tanchia.qian", "_blank");
-              }}
-            />
+            <button>
+              <FaInstagram
+                onClick={() => {
+                  window.open(
+                    "https://www.instagram.com/_chiaqian_/",
+                    "_blank"
+                  );
+                }}
+              />
+            </button>
+            <button>
+              <FaFacebook
+                onClick={() => {
+                  window.open(
+                    "https://www.facebook.com/tanchia.qian",
+                    "_blank"
+                  );
+                }}
+              />
+            </button>
           </div>
         </div>
       </div>

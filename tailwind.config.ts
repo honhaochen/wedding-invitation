@@ -43,7 +43,7 @@ const config: Config = {
         display: ["Aref Ruqaa Ink", "ui-serif", "serif"],
         body: ["PT Sans Narrow", "ui-sans-serif", "sans-serif"],
         chinese: [
-          "ZCOOL KuaiLe",
+          "Noto Sans HK",
           "sans-serif",
         ],
       },

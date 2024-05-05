@@ -32,40 +32,44 @@ const Door = ({ setOpen, setDisplaySwipeHint }: Props) => {
             backgroundRepeat: "no-repeat",
           }}
         />
-        <GiDoorRingHandle
-          className={`text-[rgb(196,147,57)] w-10 h-auto fill-current ${
-            click ? "animate-flip opacity-0" : "animate-bounce"
-          }`}
-          onClick={async () => {
-            setClick(true);
-            await new Promise((resolve) => setTimeout(resolve, 500));
-            setSlide(true);
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            setOpen(true);
-          }}
-        />
+        <button>
+          <GiDoorRingHandle
+            className={`text-[rgb(196,147,57)] w-10 h-auto fill-current ${
+              click ? "animate-flip opacity-0" : "animate-bounce"
+            }`}
+            onClick={async () => {
+              setClick(true);
+              await new Promise((resolve) => setTimeout(resolve, 500));
+              setSlide(true);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              setOpen(true);
+            }}
+          />
+        </button>
       </div>
       <div
         className={`bg-[#d8cab8] h-[100vh] w-[50vw] flex items-center origin-right ml-[0.125rem] shadow-2xl ${
           slide && styles.slideRight
         } ${slide && "[transform:rotate(90deg)]"}`}
       >
-        <GiDoorRingHandle
-          className={`text-[rgb(196,147,57)] w-10 h-auto fill-current ${
-            click ? "animate-flip opacity-0" : "animate-bounce"
-          }`}
-          onClick={async () => {
-            setClick(true);
-            await new Promise((resolve) => setTimeout(resolve, 500));
-            setSlide(true);
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            setOpen(true);
-            await new Promise((resolve) => setTimeout(resolve, 3000));
-            setDisplaySwipeHint(true);
-            await new Promise((resolve) => setTimeout(resolve, 3500));
-            setDisplaySwipeHint(false);
-          }}
-        />
+        <button>
+          <GiDoorRingHandle
+            className={`text-[rgb(196,147,57)] w-10 h-auto fill-current ${
+              click ? "animate-flip opacity-0" : "animate-bounce"
+            }`}
+            onClick={async () => {
+              setClick(true);
+              await new Promise((resolve) => setTimeout(resolve, 500));
+              setSlide(true);
+              await new Promise((resolve) => setTimeout(resolve, 1000));
+              setOpen(true);
+              await new Promise((resolve) => setTimeout(resolve, 3000));
+              setDisplaySwipeHint(true);
+              await new Promise((resolve) => setTimeout(resolve, 3500));
+              setDisplaySwipeHint(false);
+            }}
+          />
+        </button>
         <div
           className="w-[50vw] h-[40vw] md:w-[50vw] md:h-[30vh]"
           style={{

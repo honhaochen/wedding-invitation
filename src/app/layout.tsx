@@ -71,10 +71,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=PT+Sans+Narrow:wght@400;700&family=ZCOOL+KuaiLe&display=swap"
-          rel="stylesheet"
-        ></link>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap" rel="stylesheet" />
       </head>
       <body className={`${inter.className} bg-off-white`}>
         <div>{children}</div>
