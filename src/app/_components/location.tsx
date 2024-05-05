@@ -21,13 +21,13 @@ const Location = () => {
         >
           <div className="w-[80vw] p-8 flex items-center justify-center flex-col">
             <div className="text-4xl font-bold mt-4 font-chinese text-off-white-dark">
-              婚礼地点
+              婚禮地點
             </div>
             <div className="text-4xl font-bold mt-1 font-display text-off-white-dark">
               Venue
             </div>
             <div className="text-lg font-chinese mt-2 text-off-white-dark">
-              喜粤饮食集团
+              喜粵飲食集團
             </div>
             <div className="text-lg font-display mt-1 text-off-white-dark text-center">
               Sunway Velocity Grand Imperial Group

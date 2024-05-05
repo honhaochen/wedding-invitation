@@ -38,7 +38,7 @@ const Intro = () => {
                   The Bride <span className="font-chinese">新娘</span>
                 </div>
                 <div className="text-sm font-body text-off-white-dark">
-                  Tan Chia Qian <span className="font-chinese">陈嘉倩</span>
+                  Tan Chia Qian <span className="font-chinese">陳嘉倩</span>
                 </div>
               </div>
             </div>

@@ -17,7 +17,7 @@ const Loading = () => {
   return (
     <div className="h-[100vh] w-[100vw] flex-col items-center justify-center flex absolute top-0 left-0">
       <div className="text-2xl mt-4 font-bold font-chinese text-off-white-dark text-center">
-        ~ 执子之手，与子偕老 ~
+        ~ 執子之手，與子偕老 ~
       </div>
       <div className="flex justify-center items-center">
         <div

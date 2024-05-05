@@ -37,7 +37,12 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     if (submitted) return;
-    if (noPax === "" || dietaryOption === "" || noPax === "0" || !validateMobile(mobile)) {
+    if (
+      noPax === "" ||
+      dietaryOption === "" ||
+      noPax === "0" ||
+      !validateMobile(mobile)
+    ) {
       if (errorMsg != "") {
         setBounce(true);
         setTimeout(() => {
@@ -45,7 +50,9 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
         }, 2000);
       } else {
         if (!validateMobile(mobile)) {
-          setErrorMsg("Invalid mobile format, please include country code without '+'");
+          setErrorMsg(
+            "Invalid mobile format, please include country code without '+'"
+          );
         } else {
           setErrorMsg("Please fill in all fields appropriately");
         }
@@ -81,7 +88,7 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
           className={`flex flex-col items-center justify-center ${styles.fadeOut}`}
         >
           <div className="text-4xl font-bold font-chinese text-off-white-dark">
-            登记
+            登記
           </div>
           <div className="text-4xl mt-2 font-bold font-display text-off-white-dark">
             Registration
@@ -91,7 +98,7 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
             className="flex flex-col bg-white p-8 m-4 rounded-2xl"
           >
             <label className="text-lg font-body mb-2 text-off-white-dark">
-              电话 Mobile No:
+              電話 Mobile No:
               <input
                 className="w-[50vw] md:ml-2 md:w-[30vw] text-center bg-off-white"
                 type="number"
@@ -106,7 +113,7 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
               />
             </label>
             <label className="text-lg font-body mb-2 text-off-white-dark">
-              人数 No Pax:
+              人數 No Pax:
               <input
                 className="w-[50vw] md:ml-2 md:w-[30vw] text-center bg-off-white"
                 type="number"
