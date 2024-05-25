@@ -14,10 +14,10 @@ const Location = () => {
   }, [page.activeIndex]);
 
   useEffect(() => {
-    // setShow(true) after 4 seconds
+    // setShow(true) after 8 seconds
     setTimeout(() => {
       setShow(true);
-    }, 4000);
+    }, 8000);
   }, []);
 
   return (

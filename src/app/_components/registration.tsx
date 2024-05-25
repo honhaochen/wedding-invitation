@@ -35,10 +35,10 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
   }, [page.activeIndex]);
 
   useEffect(() => {
-    // setShow(true) after 5 seconds
+    // setShow(true) after 9 seconds
     setTimeout(() => {
       setShow(true);
-    }, 5000);
+    }, 9000);
   }, []);
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
@@ -102,7 +102,7 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
           </div>
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col bg-white p-8 m-4 rounded-2xl"
+            className="flex flex-col bg-white p-8 m-4 rounded-2xl md:p-2"
           >
             <label className="text-lg font-body mb-2 text-off-white-dark">
               電話 Mobile No:

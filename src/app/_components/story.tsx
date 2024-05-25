@@ -68,10 +68,10 @@ const Story = () => {
   }, [page.activeIndex]);
 
   useEffect(() => {
-    // setShow(true) after 1 seconds
+    // setShow(true) after 3 seconds
     setTimeout(() => {
       setShow(true);
-    }, 1000);
+    }, 3000);
   }, []);
 
   return (

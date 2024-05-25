@@ -14,10 +14,10 @@ const Intro = () => {
   }, [page.activeIndex]);
 
   useEffect(() => {
-    // setShow(true) after 2 seconds
+    // setShow(true) after 6 seconds
     setTimeout(() => {
       setShow(true);
-    }, 2000);
+    }, 6000);
   }, []);
 
   return (

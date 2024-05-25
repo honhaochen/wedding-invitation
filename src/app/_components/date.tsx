@@ -13,10 +13,10 @@ const DateView = () => {
   }, [page.activeIndex]);
 
   useEffect(() => {
-    // setShow(true) after 3 seconds
+    // setShow(true) after 7 seconds
     setTimeout(() => {
       setShow(true);
-    }, 3000);
+    }, 7000);
   }, []);
 
   return (
