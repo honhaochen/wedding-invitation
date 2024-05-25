@@ -12,6 +12,13 @@ const DateView = () => {
     }
   }, [page.activeIndex]);
 
+  useEffect(() => {
+    // setShow(true) after 3 seconds
+    setTimeout(() => {
+      setShow(true);
+    }, 3000);
+  }, []);
+
   return (
     <div className="h-[90vh] flex flex-col items-center rounded-3xl border-4 border-white my-10 justify-center">
       {show && (

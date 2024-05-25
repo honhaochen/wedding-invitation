@@ -67,6 +67,13 @@ const Story = () => {
     }
   }, [page.activeIndex]);
 
+  useEffect(() => {
+    // setShow(true) after 1 seconds
+    setTimeout(() => {
+      setShow(true);
+    }, 1000);
+  }, []);
+
   return (
     <div className="h-[90vh] rounded-3xl border-4 border-white my-10 overflow-hidden">
       {show && (

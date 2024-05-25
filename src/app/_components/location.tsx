@@ -13,6 +13,13 @@ const Location = () => {
     }
   }, [page.activeIndex]);
 
+  useEffect(() => {
+    // setShow(true) after 4 seconds
+    setTimeout(() => {
+      setShow(true);
+    }, 4000);
+  }, []);
+
   return (
     <div className="h-[90vh] flex flex-col items-center justify-center rounded-3xl border-4 border-white my-10">
       {show && (

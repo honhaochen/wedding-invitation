@@ -34,6 +34,13 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
     }
   }, [page.activeIndex]);
 
+  useEffect(() => {
+    // setShow(true) after 5 seconds
+    setTimeout(() => {
+      setShow(true);
+    }, 5000);
+  }, []);
+
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     if (submitted) return;
