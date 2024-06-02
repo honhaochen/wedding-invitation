@@ -47,7 +47,7 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
     if (
       noPax === "" ||
       dietaryOption === "" ||
-      noPax === "0" ||
+      Number(noPax) < 0 ||
       !validateMobile(mobile)
     ) {
       if (errorMsg != "") {
