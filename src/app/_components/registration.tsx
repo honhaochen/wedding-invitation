@@ -100,6 +100,9 @@ const Registration = ({ hash, mobileNo, hasSubmitted }: Props) => {
           <div className="text-4xl mt-2 font-bold font-display text-off-white-dark">
             Registration
           </div>
+          <div className="text-xs mt-2 font-bold font-display text-red-500">
+            Please submit by 1st August 2024!
+          </div>
           <form
             onSubmit={handleSubmit}
             className="flex flex-col bg-white p-8 m-4 rounded-2xl md:p-2"
