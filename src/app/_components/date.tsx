@@ -34,7 +34,7 @@ const DateView = () => {
           <div className="text-lg font-chinese text-off-white-dark">
             2024 年 10 月 27 日
           </div>
-          <div className="text-lg font-chinese text-off-white-dark">1900</div>
+          <div className="text-lg font-chinese text-off-white-dark">7 P.M.</div>
           <div
             className="mt-4 w-[70vw] h-[40vh]"
             style={{

@@ -47,6 +47,7 @@ const Location = () => {
               backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              cursor: "pointer",
             }}
             onClick={() => {
               // Open Google Maps in a new tab
@@ -56,6 +57,9 @@ const Location = () => {
               );
             }}
           />
+          <div className="text-sm font-display mt-4 text-off-white-dark">
+            Press to Open Google Maps
+          </div>
         </div>
       )}
     </div>
