@@ -5,13 +5,14 @@ type Contact = {
   name: string;
   mobile_no: string;
   submitted: boolean;
+  table: string;
 }
 
 // read from os env
 const mode = process.env.NODE_ENV;
-const sample_contact_list: Contact[] = [{"hash":"test", "name": "Hon Hao Chen", "mobile_no":"", "submitted":false}]
+const sample_contact_list: Contact[] = [{"hash":"test", "name": "Hon Hao Chen", "mobile_no":"", "submitted":false, "table": ""}];
 
-const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbyADC0_tLaSKQGFMdTepbDpW7rL8bKQKot4BwDwtaRaPNw34lgl4yjBXHrLQFaZNmuM0Q/exec`;
+const CONTACT_LIST_API = `https://script.google.com/macros/s/AKfycbzgbd9OsoWgzVDQ0c13EiJgDfHNl6AzmiLWn1nUzV93HkmU-37Ni6MImIA9_pF1IENEDg/exec`;
 
 const useContactList = () => {
   const { data, error, isLoading, isValidating } = useSWR(

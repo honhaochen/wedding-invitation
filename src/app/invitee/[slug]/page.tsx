@@ -60,6 +60,20 @@ function RegisterTag() {
   );
 }
 
+function TableTag({ hash }: { hash: string }) {
+  const router = useRouter();
+  return (
+    <div
+      className="fixed right-0 top-8 w-[5rem] h-[1.7rem] font-body text-white text-sm z-10 p-1 pr-2 rounded-l-lg border-1 bg-off-white-light"
+      onClick={() => {
+        router.push(`${hash}/table`);
+      }}
+    >
+      My Table
+    </div>
+  );
+}
+
 export default function Invitee({ params }: Params) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -123,7 +137,7 @@ export default function Invitee({ params }: Params) {
         )}
       </button>
       {displaySwipeHint && <SwipeHint />}
-      {<RegisterTag />}
+      {submitted ? <TableTag hash={hash} /> : <RegisterTag />}
       {open ? (
         <>
           <CoverImage inviteeName={name} />
@@ -131,7 +145,11 @@ export default function Invitee({ params }: Params) {
           <Intro />
           <DateView />
           <Map />
-          <Registration mobileNo={mobileNo} hash={hash} hasSubmitted={submitted} />
+          <Registration
+            mobileNo={mobileNo}
+            hash={hash}
+            hasSubmitted={submitted}
+          />
           <Footer />
         </>
       ) : (

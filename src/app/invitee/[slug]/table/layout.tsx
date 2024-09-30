@@ -1,9 +1,13 @@
 import Container from "@/app/_components/container";
 
-export default function InviteeLayout({
+export default function TableLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main>{children}</main>;
+  return (
+    <main>
+      <Container>{children}</Container>
+    </main>
+  );
 }
