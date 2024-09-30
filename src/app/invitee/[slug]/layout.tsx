@@ -5,5 +5,9 @@ export default function InviteeLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main>{children}</main>;
+  return (
+    <main>
+      <Container>{children}</Container>
+    </main>
+  );
 }

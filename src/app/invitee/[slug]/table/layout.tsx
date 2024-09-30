@@ -5,9 +5,5 @@ export default function TableLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <main>
-      <Container>{children}</Container>
-    </main>
-  );
+  return <main>{children}</main>;
 }
